@@ -1,0 +1,40 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="docLayer1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff" />
+      <stop offset="100%" style="stop-color:#f8f9fa" />
+    </linearGradient>
+    <linearGradient id="docLayer2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa" />
+      <stop offset="100%" style="stop-color:#e9ecef" />
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F4C81" />
+      <stop offset="100%" style="stop-color:#0D3F6B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean background -->
+  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+
+  <!-- Document pad icon - stacked documents -->
+  <!-- Back layer (subtle depth) -->
+  <rect x="14" y="12" width="40" height="48" rx="2.5" fill="#e9ecef" opacity="0.4"/>
+
+  <!-- Middle layer -->
+  <rect x="10" y="8" width="40" height="48" rx="2.5" fill="url(#docLayer2)" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Front layer (main document) -->
+  <rect x="6" y="4" width="40" height="48" rx="2.5" fill="url(#docLayer1)" stroke="#adb5bd" stroke-width="1.5"/>
+
+  <!-- Document lines (representing resource content) -->
+  <line x1="12" y1="14" x2="40" y2="14" stroke="#0F4C81" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="12" y1="22" x2="34" y2="22" stroke="#ced4da" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="29" x2="37" y2="29" stroke="#ced4da" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="36" x2="30" y2="36" stroke="#ced4da" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="43" x2="35" y2="43" stroke="#ced4da" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Subtle corner fold (document detail) -->
+  <path d="M 38 4 L 46 4 L 46 12 L 38 4 Z" fill="#dee2e6"/>
+  <path d="M 38 4 L 46 12 L 38 12 Z" fill="url(#blueAccent)" opacity="0.12"/>
+</svg>

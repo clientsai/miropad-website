@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status – Miropad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="miropad-icon.svg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="https://app.clients.ai" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 14V4M10 4L6 8M10 4L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="/docs" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 17C4 13.5 6.5 11 10 11C13.5 11 16 13.5 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- View Resource Modal -->
+        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <h2 id="modalTitle">Powered by Clients.ai</h2>
+                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
+                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
+                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
+            </div>
+        </div>
+
+        <div class="page-hero">
+            <h1>System Status</h1>
+            <p class="hero-subtitle">Real-time operational monitoring</p>
+        </div>
+
+        <!-- Monitoring Dashboard Visualization -->
+        <div class="page-visualization">
+            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-label="Real-time system monitoring dashboard">
+                <defs>
+                    <linearGradient id="uptimeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#0F4C81;stop-opacity:0.05" />
+                    </linearGradient>
+
+                    <filter id="dashboardGlow">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+
+                    <linearGradient id="pulseGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+                        <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#0F4C81;stop-opacity:0.2" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Background grid -->
+                <pattern id="statusGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+                    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="1"/>
+                </pattern>
+                <rect width="800" height="400" fill="url(#statusGrid)"/>
+
+                <!-- Main monitoring dashboard frame -->
+                <rect x="50" y="50" width="700" height="300" rx="8" fill="rgba(255,255,255,0.4)" stroke="rgba(0,0,0,0.08)" stroke-width="1.5"/>
+
+                <!-- Uptime graph visualization -->
+                <g transform="translate(80, 280)">
+                    <!-- 30-day uptime bars -->
+                    <rect x="0" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="12" y="-195" width="8" height="195" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="24" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="36" y="-198" width="8" height="198" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="48" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="60" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="72" y="-197" width="8" height="197" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="84" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="96" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="108" y="-199" width="8" height="199" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="120" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="132" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="144" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="156" y="-198" width="8" height="198" fill="url(#uptimeGradient)" opacity="0.9"/>
+                    <rect x="168" y="-200" width="8" height="200" fill="url(#uptimeGradient)" opacity="0.9"/>
+
+                    <!-- Current day (highlighted) -->
+                    <rect x="180" y="-200" width="8" height="200" fill="#0F4C81" opacity="1">
+                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+                    </rect>
+
+                    <!-- Label -->
+                    <text x="0" y="20" font-family="-apple-system, sans-serif" font-size="10" fill="#999">30-day uptime</text>
+                    <text x="0" y="35" font-family="SF Mono, monospace" font-size="12" font-weight="600" fill="#0F4C81">99.9%</text>
+                </g>
+
+                <!-- Real-time heartbeat monitor -->
+                <g transform="translate(350, 200)">
+                    <!-- Heartbeat wave -->
+                    <path d="M 0 0 L 20 0 L 25 -30 L 30 40 L 35 -20 L 40 0 L 80 0"
+                          fill="none" stroke="#0F4C81" stroke-width="2" opacity="0.6">
+                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.5s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M 80 0 L 100 0 L 105 -30 L 110 40 L 115 -20 L 120 0 L 160 0"
+                          fill="none" stroke="#0F4C81" stroke-width="2" opacity="0.6">
+                        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+                    </path>
+
+                    <!-- Label -->
+                    <text x="0" y="40" font-family="-apple-system, sans-serif" font-size="10" fill="#999">System heartbeat</text>
+                    <text x="0" y="55" font-family="SF Mono, monospace" font-size="12" font-weight="600" fill="#0F4C81">HEALTHY</text>
+                </g>
+
+                <!-- Response time graph -->
+                <g transform="translate(550, 190)">
+                    <!-- Response time line graph -->
+                    <polyline points="0,60 15,58 30,55 45,57 60,54 75,56 90,52 105,50 120,48"
+                              fill="none" stroke="#0F4C81" stroke-width="2" opacity="0.6"/>
+                    <polyline points="0,60 15,58 30,55 45,57 60,54 75,56 90,52 105,50 120,48"
+                              fill="url(#pulseGradient)" opacity="0.15"/>
+
+                    <!-- Current value indicator -->
+                    <circle cx="120" cy="48" r="4" fill="#0F4C81">
+                        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+
+                    <!-- Label -->
+                    <text x="0" y="90" font-family="-apple-system, sans-serif" font-size="10" fill="#999">Response time</text>
+                    <text x="0" y="105" font-family="SF Mono, monospace" font-size="12" font-weight="600" fill="#0F4C81">&lt; 50ms</text>
+                </g>
+
+                <!-- Status indicators (top) -->
+                <g transform="translate(80, 80)">
+                    <!-- Service 1 -->
+                    <circle cx="0" cy="0" r="6" fill="#0F4C81">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="12" y="4" font-family="-apple-system, sans-serif" font-size="10" fill="#666">Routing</text>
+
+                    <!-- Service 2 -->
+                    <circle cx="80" cy="0" r="6" fill="#0F4C81">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="92" y="4" font-family="-apple-system, sans-serif" font-size="10" fill="#666">Encryption</text>
+
+                    <!-- Service 3 -->
+                    <circle cx="180" cy="0" r="6" fill="#0F4C81">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="192" y="4" font-family="-apple-system, sans-serif" font-size="10" fill="#666">Analytics</text>
+
+                    <!-- Service 4 -->
+                    <circle cx="270" cy="0" r="6" fill="#0F4C81">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="282" y="4" font-family="-apple-system, sans-serif" font-size="10" fill="#666">API</text>
+                </g>
+
+                <!-- Status summary -->
+                <g font-family="SF Mono, monospace" font-size="10" fill="#999">
+                    <text x="400" y="375" text-anchor="middle">ALL SYSTEMS OPERATIONAL · 0 INCIDENTS · 24/7 MONITORING</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Overall Status Card -->
+        <div class="status-banner status-operational">
+            <div class="status-banner-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#0F4C81"/>
+                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="status-banner-content">
+                <h2>All Systems Operational</h2>
+                <p>All Miropad services are functioning normally. No active incidents or degraded performance.</p>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Services</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="service-status">
+                    <div class="service-item">
+                        <div class="service-info">
+                            <span class="service-name">Link Routing</span>
+                            <span class="service-desc">301 redirect service</span>
+                        </div>
+                        <div class="service-indicator operational">
+                            <span class="status-dot"></span>
+                            <span>Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <span class="service-name">TLS Encryption</span>
+                            <span class="service-desc">End-to-end encryption</span>
+                        </div>
+                        <div class="service-indicator operational">
+                            <span class="status-dot"></span>
+                            <span>Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <span class="service-name">Analytics</span>
+                            <span class="service-desc">Engagement data logging</span>
+                        </div>
+                        <div class="service-indicator operational">
+                            <span class="status-dot"></span>
+                            <span>Operational</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-info">
+                            <span class="service-name">API</span>
+                            <span class="service-desc">Partner integrations</span>
+                        </div>
+                        <div class="service-indicator operational">
+                            <span class="status-dot"></span>
+                            <span>Operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Performance Metrics</h2>
+            </div>
+            <div class="section-body">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Uptime (30 days)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">&lt; 50ms</div>
+                        <div class="metric-label">Avg Response Time</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">0</div>
+                        <div class="metric-label">Active Incidents</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">24/7</div>
+                        <div class="metric-label">Monitoring</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Incident History Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Incident History</h2>
+            </div>
+            <div class="section-body">
+                <div class="incident-status">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="20" fill="rgba(15, 76, 129, 0.1)"/>
+                        <path d="M18 24L22 28L30 20" stroke="#0F4C81" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>No incidents reported in the last 90 days</p>
+                </div>
+
+                <div class="info-box">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; margin-top: 2px;">
+                        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 7V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="8" cy="5" r="0.5" fill="currentColor"/>
+                    </svg>
+                    <div>
+                        <strong>Status Updates</strong><br>
+                        For real-time status updates and to subscribe to incident notifications, contact
+                        <a href="mailto:support@miropad.com">support@miropad.com</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infrastructure Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Infrastructure</h2>
+            </div>
+            <div class="section-body">
+                <p>Miropad operates on redundant infrastructure with enterprise-grade reliability:</p>
+                <div class="content-grid" style="margin-top: 24px;">
+                    <div class="content-card">
+                        <h3>Global Distribution</h3>
+                        <ul class="feature-list">
+                            <li>Multi-region deployment</li>
+                            <li>Automatic failover</li>
+                            <li>Global CDN routing</li>
+                            <li>Low-latency delivery</li>
+                        </ul>
+                    </div>
+                    <div class="content-card">
+                        <h3>Active Protection</h3>
+                        <ul class="feature-list">
+                            <li>DDoS protection</li>
+                            <li>Rate limiting</li>
+                            <li>24/7 monitoring</li>
+                            <li>Automated response</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transparency Section -->
+        <div class="content-section" style="border-bottom: none;">
+            <div class="section-header">
+                <h2>Transparency</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    We believe in full operational transparency. This page is updated in real-time to reflect
+                    the current state of Miropad services. For historical incident reports or detailed technical
+                    information, contact <a href="mailto:support@miropad.com">support@miropad.com</a>.
+                </p>
+            </div>
+        </div>
+
+        <footer class="ive-footer">
+            <div class="footer-wrapper">
+                <nav class="footer-main-nav">
+                    <a href="/about" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="7" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <a href="/security" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 4V9C4 13 6.5 16.5 10 18.5C13.5 16.5 16 13 16 9V4L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7.5 10L9 11.5L12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Security</span>
+                    </a>
+                    <a href="/docs" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Docs</span>
+                    </a>
+                    <a href="/support" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 13C7 13 8.5 15 10 15C11.5 15 13 13 13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7.5" cy="8.5" r="0.5" fill="currentColor"/>
+                            <circle cx="12.5" cy="8.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>Support</span>
+                    </a>
+                </nav>
+                <div class="footer-meta">
+                    <p class="footer-copyright">© <span id="current-year">2025</span> your AI platform</p>
+                    <p class="footer-tagline">A Miropad System</p>
+                    <nav class="footer-legal-nav">
+                        <a href="/status">Status</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+    // Upload Modal
+    (function() {
+        const modal = document.getElementById('uploadModal');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        uploadBtn.addEventListener('click', openModal);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

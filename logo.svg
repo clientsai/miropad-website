@@ -1,0 +1,43 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Clean gradients for document layers -->
+    <linearGradient id="docLayer1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff" />
+      <stop offset="100%" style="stop-color:#f8f9fa" />
+    </linearGradient>
+    <linearGradient id="docLayer2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa" />
+      <stop offset="100%" style="stop-color:#e9ecef" />
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F4C81" />
+      <stop offset="100%" style="stop-color:#0D3F6B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Document icon - stacked documents representing content resources -->
+  <!-- Back layer (subtle depth) -->
+  <rect x="4" y="9" width="24" height="30" rx="1.5" fill="#e9ecef" opacity="0.4"/>
+
+  <!-- Middle layer -->
+  <rect x="2" y="7" width="24" height="30" rx="1.5" fill="url(#docLayer2)" stroke="#dee2e6" stroke-width="0.5"/>
+
+  <!-- Front layer (main document) -->
+  <rect x="0" y="5" width="24" height="30" rx="1.5" fill="url(#docLayer1)" stroke="#adb5bd" stroke-width="1"/>
+
+  <!-- Document lines (representing content) -->
+  <line x1="4" y1="11" x2="20" y2="11" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="4" y1="16" x2="16" y2="16" stroke="#ced4da" stroke-width="1" stroke-linecap="round"/>
+  <line x1="4" y1="20" x2="18" y2="20" stroke="#ced4da" stroke-width="1" stroke-linecap="round"/>
+  <line x1="4" y1="24" x2="14" y2="24" stroke="#ced4da" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Subtle corner fold (document detail) -->
+  <path d="M 20 5 L 24 5 L 24 9 L 20 5 Z" fill="#dee2e6"/>
+  <path d="M 20 5 L 24 9 L 20 9 Z" fill="url(#blueAccent)" opacity="0.1"/>
+
+  <!-- Miropad Typography -->
+  <text x="30" y="18" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="17" font-weight="600" fill="#111827" letter-spacing="-0.03em">Miropad</text>
+
+  <!-- Clean subtitle -->
+  <text x="30" y="30" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif" font-size="9" font-weight="400" fill="#6B7280" letter-spacing="0.03em">Resources</text>
+</svg>

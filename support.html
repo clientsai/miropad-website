@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support – Miropad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="miropad-icon.svg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="https://app.clients.ai" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 14V4M10 4L6 8M10 4L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="/docs" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 17C4 13.5 6.5 11 10 11C13.5 11 16 13.5 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- View Resource Modal -->
+        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <h2 id="modalTitle">Powered by Clients.ai</h2>
+                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
+                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
+                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
+            </div>
+        </div>
+
+        <div class="page-hero">
+            <h1>Support Center</h1>
+            <p class="hero-subtitle">We're here to help with any questions or issues</p>
+        </div>
+
+        <!-- Support Channels Visualization -->
+        <div style="max-width: 1200px; margin: 48px auto; padding: 0 24px;">
+            <svg viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="supportGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:0.1" />
+                        <stop offset="50%" style="stop-color:#0F4C81;stop-opacity:0.15" />
+                        <stop offset="100%" style="stop-color:#0F4C81;stop-opacity:0.1" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Background -->
+                <rect width="1000" height="300" fill="url(#supportGradient)" rx="12"/>
+
+                <!-- Support channels -->
+                <g font-family="-apple-system, sans-serif" text-anchor="middle">
+                    <!-- Email Support -->
+                    <g transform="translate(200, 150)">
+                        <circle cx="0" cy="0" r="50" fill="white" stroke="#0F4C81" stroke-width="2.5"/>
+                        <text y="-10" font-size="14" font-weight="600" fill="#1a1a1a">Email</text>
+                        <text y="8" font-size="11" fill="#666">24/7 Support</text>
+                        <text y="24" font-size="9" fill="#0F4C81" font-weight="600">< 24h response</text>
+                    </g>
+
+                    <!-- Documentation -->
+                    <g transform="translate(400, 150)">
+                        <circle cx="0" cy="0" r="50" fill="white" stroke="#0F4C81" stroke-width="2.5"/>
+                        <text y="-10" font-size="14" font-weight="600" fill="#1a1a1a">Docs</text>
+                        <text y="8" font-size="11" fill="#666">Self-Service</text>
+                        <text y="24" font-size="9" fill="#0F4C81" font-weight="600">Instant</text>
+                    </g>
+
+                    <!-- Status Page -->
+                    <g transform="translate(600, 150)">
+                        <circle cx="0" cy="0" r="50" fill="white" stroke="#0F4C81" stroke-width="2.5"/>
+                        <text y="-10" font-size="14" font-weight="600" fill="#1a1a1a">Status</text>
+                        <text y="8" font-size="11" fill="#666">Real-time</text>
+                        <text y="24" font-size="9" fill="#0F4C81" font-weight="600">Live updates</text>
+                    </g>
+
+                    <!-- Security -->
+                    <g transform="translate(800, 150)">
+                        <circle cx="0" cy="0" r="50" fill="white" stroke="#0F4C81" stroke-width="2.5"/>
+                        <text y="-10" font-size="14" font-weight="600" fill="#1a1a1a">Security</text>
+                        <text y="8" font-size="11" fill="#666">Vulnerabilities</text>
+                        <text y="24" font-size="9" fill="#0F4C81" font-weight="600">Priority</text>
+                    </g>
+                </g>
+
+                <!-- Connecting lines -->
+                <path d="M 250 150 L 350 150" stroke="#0F4C81" stroke-width="2" opacity="0.2" stroke-dasharray="4,4"/>
+                <path d="M 450 150 L 550 150" stroke="#0F4C81" stroke-width="2" opacity="0.2" stroke-dasharray="4,4"/>
+                <path d="M 650 150 L 750 150" stroke="#0F4C81" stroke-width="2" opacity="0.2" stroke-dasharray="4,4"/>
+            </svg>
+        </div>
+
+        <!-- Contact Methods -->
+        <div style="max-width: 1200px; margin: 64px auto; padding: 0 24px;">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <h2 style="font-family: -apple-system, sans-serif; font-size: 36px; font-weight: 700; color: #252525; margin-bottom: 16px;">Get in Touch</h2>
+                <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #666; max-width: 700px; margin: 0 auto;">Choose the best way to reach us based on your needs. All inquiries receive prompt attention from our team.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 64px;">
+                <!-- General Support -->
+                <div style="padding: 40px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                    <div style="width: 48px; height: 48px; background: rgba(15, 76, 129, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="5" width="18" height="14" rx="2" stroke="#0F4C81" stroke-width="2"/>
+                            <path d="M3 7L12 13L21 7" stroke="#0F4C81" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: -apple-system, sans-serif; font-size: 22px; font-weight: 600; color: #252525; margin-bottom: 12px;">General Support</h3>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px;">For account questions, technical issues, and general inquiries.</p>
+                    <a href="mailto:support@miropad.com" style="display: inline-flex; align-items: center; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #0F4C81; text-decoration: none;">
+                        support@miropad.com
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+                            <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(0, 0, 0, 0.06); font-family: SF Mono, monospace; font-size: 12px; color: #999;">Response time: < 24 hours</div>
+                </div>
+
+                <!-- Security Issues -->
+                <div style="padding: 40px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                    <div style="width: 48px; height: 48px; background: rgba(15, 76, 129, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3L5 6V11C5 15.5 8 19.5 12 21C16 19.5 19 15.5 19 11V6L12 3Z" stroke="#0F4C81" stroke-width="2"/>
+                            <path d="M9 12L11 14L15 10" stroke="#0F4C81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: -apple-system, sans-serif; font-size: 22px; font-weight: 600; color: #252525; margin-bottom: 12px;">Security Vulnerabilities</h3>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px;">Report security issues and vulnerabilities through our dedicated channel.</p>
+                    <a href="mailto:security@miropad.com" style="display: inline-flex; align-items: center; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #0F4C81; text-decoration: none;">
+                        security@miropad.com
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+                            <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(0, 0, 0, 0.06); font-family: SF Mono, monospace; font-size: 12px; color: #999;">Response time: Priority</div>
+                </div>
+
+                <!-- Privacy -->
+                <div style="padding: 40px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                    <div style="width: 48px; height: 48px; background: rgba(15, 76, 129, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="7" y="11" width="10" height="9" rx="1.5" stroke="#0F4C81" stroke-width="2"/>
+                            <path d="M9 11V7C9 5.34315 10.3431 4 12 4C13.6569 4 15 5.34315 15 7V11" stroke="#0F4C81" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: -apple-system, sans-serif; font-size: 22px; font-weight: 600; color: #252525; margin-bottom: 12px;">Privacy Concerns</h3>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px;">Data requests, GDPR inquiries, and privacy-related questions.</p>
+                    <a href="mailto:privacy@miropad.com" style="display: inline-flex; align-items: center; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #0F4C81; text-decoration: none;">
+                        privacy@miropad.com
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+                            <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(0, 0, 0, 0.06); font-family: SF Mono, monospace; font-size: 12px; color: #999;">Response time: < 72 hours</div>
+                </div>
+
+                <!-- Legal -->
+                <div style="padding: 40px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                    <div style="width: 48px; height: 48px; background: rgba(15, 76, 129, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 7H19M7 11H17M9 15H15" stroke="#0F4C81" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="5" y="4" width="14" height="16" rx="2" stroke="#0F4C81" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: -apple-system, sans-serif; font-size: 22px; font-weight: 600; color: #252525; margin-bottom: 12px;">Legal Matters</h3>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px;">Legal inquiries, compliance questions, and terms clarifications.</p>
+                    <a href="mailto:legal@miropad.com" style="display: inline-flex; align-items: center; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #0F4C81; text-decoration: none;">
+                        legal@miropad.com
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+                            <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(0, 0, 0, 0.06); font-family: SF Mono, monospace; font-size: 12px; color: #999;">Response time: < 5 business days</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQs -->
+        <div style="background: rgba(249, 250, 251, 0.5); padding: 64px 0;">
+            <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
+                <div style="text-align: center; margin-bottom: 48px;">
+                    <h2 style="font-family: -apple-system, sans-serif; font-size: 36px; font-weight: 700; color: #252525; margin-bottom: 16px;">Frequently Asked Questions</h2>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #666;">Quick answers to common questions</p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- FAQ 1 -->
+                    <div style="padding: 32px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px;">
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">What is Miropad?</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">Miropad is a secure link delivery infrastructure service providing verified 301 redirects for content distribution. We operate as part of the Miropad system to facilitate encrypted, transparent routing from miropad.com URLs to destination content.</p>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div style="padding: 32px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px;">
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">How secure are Miropad links?</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">All Miropad links are protected with TLS 1.3 encryption and verified through our secure infrastructure. We maintain SOC 2 Type II, ISO 27001, GDPR, and CCPA compliance. Every link click is logged and monitored 24/7 for security.</p>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div style="padding: 32px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px;">
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">What data does Miropad collect?</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">Miropad logs basic engagement data including click timestamps, anonymized IP addresses, user agents, and referrer information for analytics purposes. We do not sell data to third parties. View our <a href="/privacy" style="color: #0F4C81; text-decoration: none; font-weight: 600;">Privacy Policy</a> for complete details.</p>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div style="padding: 32px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px;">
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">What is your uptime guarantee?</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">Miropad maintains a 99.9% uptime guarantee with enterprise-grade infrastructure, automated failover, and 24/7 monitoring. View real-time status and historical uptime at <a href="/status" style="color: #0F4C81; text-decoration: none; font-weight: 600;">status.miropad.com</a>.</p>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div style="padding: 32px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px;">
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">How do I report a security issue?</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">Security vulnerabilities should be reported immediately to <a href="mailto:security@miropad.com" style="color: #0F4C81; text-decoration: none; font-weight: 600;">security@miropad.com</a>. We acknowledge reports within 24 hours and provide updates throughout the remediation process.</p>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div style="padding: 32px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px;">
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">Where can I find technical documentation?</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">Complete technical documentation, API references, and integration guides are available at <a href="/docs" style="color: #0F4C81; text-decoration: none; font-weight: 600;">docs.miropad.com</a>. Documentation includes code examples, SDKs, and best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Resources -->
+        <div style="max-width: 1200px; margin: 64px auto; padding: 0 24px;">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <h2 style="font-family: -apple-system, sans-serif; font-size: 36px; font-weight: 700; color: #252525; margin-bottom: 16px;">Additional Resources</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                <!-- Documentation -->
+                <a href="/docs" style="padding: 32px; background: linear-gradient(135deg, rgba(15, 76, 129, 0.05) 0%, rgba(15, 76, 129, 0.02) 100%); border: 1px solid rgba(15, 76, 129, 0.15); border-radius: 12px; text-decoration: none; display: block; transition: all 0.2s;">
+                    <div style="width: 40px; height: 40px; background: rgba(15, 76, 129, 0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 5H16M6 9H14M8 13H12" stroke="#0F4C81" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="3" y="3" width="14" height="14" rx="2" stroke="#0F4C81" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 8px;">Documentation</h3>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6;">Complete guides, API docs, and code examples</p>
+                </a>
+
+                <!-- Status Page -->
+                <a href="/status" style="padding: 32px; background: linear-gradient(135deg, rgba(15, 76, 129, 0.05) 0%, rgba(15, 76, 129, 0.02) 100%); border: 1px solid rgba(15, 76, 129, 0.15); border-radius: 12px; text-decoration: none; display: block; transition: all 0.2s;">
+                    <div style="width: 40px; height: 40px; background: rgba(15, 76, 129, 0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="7" stroke="#0F4C81" stroke-width="2"/>
+                            <circle cx="10" cy="10" r="2" fill="#0F4C81"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 8px;">System Status</h3>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6;">Real-time status and incident history</p>
+                </a>
+
+                <!-- Security -->
+                <a href="/security" style="padding: 32px; background: linear-gradient(135deg, rgba(15, 76, 129, 0.05) 0%, rgba(15, 76, 129, 0.02) 100%); border: 1px solid rgba(15, 76, 129, 0.15); border-radius: 12px; text-decoration: none; display: block; transition: all 0.2s;">
+                    <div style="width: 40px; height: 40px; background: rgba(15, 76, 129, 0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 5V9C4 13 7 16.5 10 18.5C13 16.5 16 13 16 9V5L10 2Z" stroke="#0F4C81" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 8px;">Security Details</h3>
+                    <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6;">Security architecture and compliance</p>
+                </a>
+            </div>
+        </div>
+
+        <footer class="ive-footer">
+            <div class="footer-wrapper">
+                <nav class="footer-main-nav">
+                    <a href="/about" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="7" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <a href="/security" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 4V9C4 13 6.5 16.5 10 18.5C13.5 16.5 16 13 16 9V4L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7.5 10L9 11.5L12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Security</span>
+                    </a>
+                    <a href="/docs" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Docs</span>
+                    </a>
+                    <a href="/support" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 13C7 13 8.5 15 10 15C11.5 15 13 13 13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7.5" cy="8.5" r="0.5" fill="currentColor"/>
+                            <circle cx="12.5" cy="8.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>Support</span>
+                    </a>
+                </nav>
+                <div class="footer-meta">
+                    <p class="footer-copyright">© <span id="current-year">2025</span> your AI platform</p>
+                    <p class="footer-tagline">A Miropad System</p>
+                    <nav class="footer-legal-nav">
+                        <a href="/status">Status</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+    // Upload Modal
+    (function() {
+        const modal = document.getElementById('uploadModal');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        uploadBtn.addEventListener('click', openModal);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

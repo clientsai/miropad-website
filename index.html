@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miropad.com</title>
+    <meta name="description" content="Miropad turns AI-generated insights into beautiful, shareable content resources for clients and stakeholders. Access professional reports, audits, and strategic recommendations through secure, read-only links.">
+
+    <!-- OpenGraph / Social Media Preview Tags -->
+    <meta property="og:title" content="Miropad – AI-Generated Content Resources">
+    <meta property="og:description" content="Beautiful, shareable content resources powered by AI. View professional reports, audits, and strategic recommendations through secure links.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.miropad.com">
+    <meta property="og:site_name" content="Miropad">
+    <meta property="og:image" content="https://www.miropad.com/miropad-icon.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miropad – AI-Generated Content Resources">
+    <meta property="twitter:description" content="Beautiful, shareable content resources powered by AI. Professional reports and strategic recommendations.">
+    <meta name="twitter:image" content="https://www.miropad.com/miropad-icon.svg">
+
+    <!-- Security & Trust Meta -->
+    <meta name="security" content="Read-only access, secure viewing, GDPR compliant">
+    <meta name="keywords" content="content resources, AI-generated reports, view-only documents, read-only resources, strategic insights">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="miropad-icon.svg">
+    <meta name="theme-color" content="#0F4C81">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="/docs" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                    <a href="https://app.clients.ai" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 17C4 13.5 6.5 11 10 11C13.5 11 16 13.5 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- View Pad Modal -->
+        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <h2 id="modalTitle">Powered by Clients.ai</h2>
+                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
+                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
+                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
+            </div>
+        </div>
+
+        <!-- Industry Modal -->
+        <div class="industry-modal" id="industryModal" role="dialog" aria-labelledby="industryModalTitle" aria-hidden="true">
+            <div class="industry-modal-overlay" id="industryModalOverlay"></div>
+            <div class="industry-modal-content">
+                <button class="industry-modal-close" id="industryModalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <h2 id="industryModalTitle"></h2>
+                <p id="industryModalContent"></p>
+                <a href="#" id="industryModalCTA" class="industry-modal-cta">View example →</a>
+            </div>
+        </div>
+
+        <main>
+            <div class="security-badge">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="2" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M5 5H11M5 8H11M5 11H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>View-only resources</span>
+            </div>
+
+            <h1>AI-Generated <span id="typewriter" class="typewriter"></span><span class="typewriter-cursor">|</span></h1>
+            <p class="description">
+                View-only web surface for content resources generated by AI. Access professional reports, audits, and recommendations through secure, read-only links.
+            </p>
+            <p class="subdescription">
+                Content generated by AI systems. View your resources without editing or modification.
+            </p>
+
+            <div class="infrastructure-diagram">
+                <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-label="Miropad network infrastructure">
+                    <defs>
+                        <!-- Gradient for subtle depth -->
+                        <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#e5e7eb;stop-opacity:0.3" />
+                            <stop offset="50%" style="stop-color:#0F4C81;stop-opacity:0.15" />
+                            <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:0.3" />
+                        </linearGradient>
+
+                        <!-- Subtle glow filter -->
+                        <filter id="softGlow">
+                            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Background grid (very subtle) -->
+                    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.015)" stroke-width="1"/>
+                    </pattern>
+                    <rect width="800" height="300" fill="url(#gridPattern)"/>
+
+                    <!-- Source nodes (left side) - 5 connection points with pulsing -->
+                    <g>
+                        <circle cx="60" cy="60" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="60" cy="110" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="60" cy="150" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="60" cy="190" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="60" cy="240" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+
+                    <!-- Routing paths from sources to Miropad hub -->
+                    <g stroke-linecap="round">
+                        <path d="M 64 60 Q 250 60, 380 140" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path1"/>
+                        <path d="M 64 110 Q 250 110, 380 145" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path2"/>
+                        <path d="M 64 150 L 380 150" stroke="rgba(15, 76, 129, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path3"/>
+                        <path d="M 64 190 Q 250 190, 380 155" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path4"/>
+                        <path d="M 64 240 Q 250 240, 380 160" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path5"/>
+                    </g>
+
+                    <!-- Traveling dots on incoming paths (slower, more tasteful) -->
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" repeatCount="indefinite">
+                            <mpath href="#path1"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="1s" repeatCount="indefinite">
+                            <mpath href="#path2"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="2s" repeatCount="indefinite">
+                            <mpath href="#path3"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="3s" repeatCount="indefinite">
+                            <mpath href="#path4"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="4s" repeatCount="indefinite">
+                            <mpath href="#path5"/>
+                        </animateMotion>
+                    </circle>
+
+                    <!-- Miropad central hub (routing nexus) with enhanced pulsing -->
+                    <g filter="url(#softGlow)">
+                        <!-- Outer ring with pulse -->
+                        <circle cx="400" cy="150" r="28" fill="none" stroke="rgba(15, 76, 129, 0.1)" stroke-width="12">
+                            <animate attributeName="r" values="28;32;28" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <!-- Inner core with subtle fill pulse -->
+                        <circle cx="400" cy="150" r="18" fill="rgba(15, 76, 129, 0.08)" stroke="#0F4C81" stroke-width="2">
+                            <animate attributeName="fill-opacity" values="0.08;0.15;0.08" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <!-- Central routing point with pulse -->
+                        <circle cx="400" cy="150" r="6" fill="#0F4C81">
+                            <animate attributeName="r" values="6;7;6" dur="1s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+
+                    <!-- Routing paths from Miropad hub to destinations -->
+                    <g stroke-linecap="round">
+                        <path d="M 420 140 Q 550 60, 736 60" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path6"/>
+                        <path d="M 420 145 Q 550 110, 736 110" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path7"/>
+                        <path d="M 420 150 L 736 150" stroke="rgba(15, 76, 129, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path8"/>
+                        <path d="M 420 155 Q 550 190, 736 190" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path9"/>
+                        <path d="M 420 160 Q 550 240, 736 240" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path10"/>
+                    </g>
+
+                    <!-- Traveling dots on outgoing paths (slower, more tasteful) -->
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" repeatCount="indefinite">
+                            <mpath href="#path6"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="1s" repeatCount="indefinite">
+                            <mpath href="#path7"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="2s" repeatCount="indefinite">
+                            <mpath href="#path8"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="3s" repeatCount="indefinite">
+                            <mpath href="#path9"/>
+                        </animateMotion>
+                    </circle>
+                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                        <animateMotion dur="5s" begin="4s" repeatCount="indefinite">
+                            <mpath href="#path10"/>
+                        </animateMotion>
+                    </circle>
+
+                    <!-- Destination nodes (right side) - 5 delivery points with pulsing -->
+                    <g>
+                        <circle cx="740" cy="60" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="740" cy="110" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="740" cy="150" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="740" cy="190" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="740" cy="240" r="4" fill="#9ca3af" opacity="0.4">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+
+                    <!-- Additional pulse animation on center hub -->
+                    <circle cx="400" cy="150" r="18" fill="none" stroke="#0F4C81" stroke-width="1" opacity="0.3">
+                        <animate attributeName="r" values="18;32;18" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+
+                    <!-- Enhanced labels with clearer service description -->
+                    <g font-family="SF Mono, Monaco, Inconsolata, Courier New, monospace" font-size="10" fill="#9ca3af">
+                        <text x="400" y="95" text-anchor="middle" opacity="0.6">MIROPAD VIEW-ONLY INFRASTRUCTURE</text>
+                        <text x="400" y="215" text-anchor="middle" opacity="0.5">READ-ONLY ACCESS · 99.9% UPTIME</text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="trust-stats">
+                <div class="stat-item">
+                    <div class="stat-value">Read-Only</div>
+                    <div class="stat-label">View Access</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">AI-Generated</div>
+                    <div class="stat-label">Resources</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+
+            <div class="dark-feature-section">
+                <div class="dark-feature-icon">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 6L12 12V22C12 30 18 37.5 24 42C30 37.5 36 30 36 22V12L24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M18 24L22.5 28.5L30 19.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2>Secure, read-only access.</h2>
+                <p>Every resource is accessible through secure links with read-only permissions. View AI-generated content without editing capability, ensuring content integrity and professional presentation.</p>
+            </div>
+
+            <div class="industries-section">
+                <h2>Resource Types</h2>
+                <div class="industries-grid">
+                    <div class="industry-card" data-industry="audit-reports">
+                        <h3>Audit Reports</h3>
+                        <p>Comprehensive analysis resources with findings, recommendations, and actionable insights generated by AI for business review.</p>
+                        <span class="learn-more">
+                            View sample
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="industry-card" data-industry="strategy-docs">
+                        <h3>Strategy Documents</h3>
+                        <p>Strategic planning resources with market analysis, competitive positioning, and growth recommendations for business planning.</p>
+                        <span class="learn-more">
+                            View sample
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="industry-card" data-industry="performance-reviews">
+                        <h3>Performance Reviews</h3>
+                        <p>Detailed assessment resources analyzing key metrics, trends, and performance data with AI-generated insights and next steps.</p>
+                        <span class="learn-more">
+                            View sample
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="industry-card" data-industry="research-briefs">
+                        <h3>Research Briefs</h3>
+                        <p>Concise research resources summarizing market data, customer insights, and industry trends for informed decision-making.</p>
+                        <span class="learn-more">
+                            View sample
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="industry-card" data-industry="proposal-pads">
+                        <h3>Proposals</h3>
+                        <p>Professional proposal resources outlining solutions, timelines, and pricing recommendations tailored to specific client needs.</p>
+                        <span class="learn-more">
+                            View sample
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="industry-card" data-industry="analysis-sheets">
+                        <h3>Analysis Sheets</h3>
+                        <p>Data-driven analysis resources presenting findings, patterns, and recommendations based on comprehensive information review.</p>
+                        <span class="learn-more">
+                            View sample
+                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-it-works">
+                <h2>View-Only Resource System</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>AI Generation</h3>
+                            <p>Resources created automatically by AI systems</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Secure Access</h3>
+                            <p>View-only links with read-only permissions</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Read-Only View</h3>
+                            <p>Access professional content without editing capability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-notice">
+                <p>Miropad provides view-only access to AI-generated content resources.</p>
+                <p style="margin-top: 16px; opacity: 0.7;">Powered by <a href="https://clients.ai" style="color: inherit; font-weight: 600; text-decoration: none;">Clients.ai</a></p>
+            </div>
+        </main>
+
+        <footer class="ive-footer">
+            <div class="footer-wrapper">
+                <nav class="footer-main-nav">
+                    <a href="/about" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="7" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <a href="/security" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 4V9C4 13 6.5 16.5 10 18.5C13.5 16.5 16 13 16 9V4L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7.5 10L9 11.5L12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Security</span>
+                    </a>
+                    <a href="/docs" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Docs</span>
+                    </a>
+                    <a href="/support" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 13C7 13 8.5 15 10 15C11.5 15 13 13 13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7.5" cy="8.5" r="0.5" fill="currentColor"/>
+                            <circle cx="12.5" cy="8.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>Support</span>
+                    </a>
+                </nav>
+                <div class="footer-meta">
+                    <p class="footer-copyright">© <span id="current-year">2025</span> Miropad</p>
+                    <nav class="footer-legal-nav">
+                        <a href="/status">Status</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+    // Upload Modal
+    (function() {
+        const modal = document.getElementById('uploadModal');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        uploadBtn.addEventListener('click', openModal);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+
+    // Typewriter Effect
+    (function() {
+        const typewriterEl = document.getElementById('typewriter');
+        const phrases = [
+            'Resources',
+            'Audit Reports',
+            'Strategy Docs',
+            'Analysis Sheets'
+        ];
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isPaused = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+
+            if (isPaused) {
+                setTimeout(type, 2000);
+                isPaused = false;
+                return;
+            }
+
+            if (isDeleting) {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, 500);
+                    return;
+                }
+            } else {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    isPaused = true;
+                    setTimeout(type, 2000);
+                    return;
+                }
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(type, typingSpeed);
+        }
+
+        // Start typing after a brief delay
+        setTimeout(type, 500);
+    })();
+
+    // Industry Modal
+    (function() {
+        const modal = document.getElementById('industryModal');
+        const modalClose = document.getElementById('industryModalClose');
+        const modalOverlay = document.getElementById('industryModalOverlay');
+        const modalTitle = document.getElementById('industryModalTitle');
+        const modalContent = document.getElementById('industryModalContent');
+        const modalCTA = document.getElementById('industryModalCTA');
+
+        const industryData = {
+            'audit-reports': {
+                title: 'Audit Reports',
+                content: 'Comprehensive analysis resources examining business processes, performance metrics, and compliance standards. AI-generated findings include detailed observations, risk assessments, and prioritized recommendations for improvement.',
+                url: '/docs'
+            },
+            'strategy-docs': {
+                title: 'Strategy Documents',
+                content: 'Strategic planning resources with market analysis, competitive landscape review, and growth opportunity identification. AI-generated content provides actionable strategic recommendations and implementation roadmaps.',
+                url: '/docs'
+            },
+            'performance-reviews': {
+                title: 'Performance Reviews',
+                content: 'Detailed assessment resources analyzing key performance indicators, trend analysis, and benchmark comparisons. AI-generated insights highlight strengths, identify improvement areas, and suggest optimization strategies.',
+                url: '/docs'
+            },
+            'research-briefs': {
+                title: 'Research Briefs',
+                content: 'Concise research summary resources distilling market data, customer insights, and industry trends. AI-generated content presents findings in clear, actionable formats for quick decision-making.',
+                url: '/docs'
+            },
+            'proposal-pads': {
+                title: 'Proposals',
+                content: 'Professional proposal resources outlining solutions, implementation approaches, timelines, and cost structures. AI-generated content tailored to specific client requirements and industry best practices.',
+                url: '/docs'
+            },
+            'analysis-sheets': {
+                title: 'Analysis Sheets',
+                content: 'Data-driven analysis resources presenting detailed findings, pattern identification, and evidence-based recommendations. AI-generated insights derived from comprehensive information review and synthesis.',
+                url: '/docs'
+            }
+        };
+
+        function openModal(industry) {
+            const data = industryData[industry];
+            if (!data) return;
+
+            modalTitle.textContent = data.title;
+            modalContent.textContent = data.content;
+            modalCTA.href = data.url;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        // Add click handlers to industry cards
+        document.querySelectorAll('.industry-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const industry = this.getAttribute('data-industry');
+                openModal(industry);
+            });
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Miropad",
+      "applicationCategory": "BusinessApplication",
+      "description": "View-only web surface for AI-generated content resources. Access professional reports, audits, and recommendations through secure, read-only links.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "AI-generated content resources",
+        "View-only access",
+        "Read-only documents",
+        "Professional reports",
+        "Audit and analysis resources"
+      ],
+      "securityDescription": "Secure read-only access with GDPR compliance"
+    }
+    </script>
+</body>
+</html>

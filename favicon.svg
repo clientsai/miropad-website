@@ -1,0 +1,37 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Clean gradients for document layers -->
+    <linearGradient id="docLayer1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff" />
+      <stop offset="100%" style="stop-color:#f8f9fa" />
+    </linearGradient>
+    <linearGradient id="docLayer2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa" />
+      <stop offset="100%" style="stop-color:#e9ecef" />
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F4C81" />
+      <stop offset="100%" style="stop-color:#0D3F6B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Document pad icon - stacked documents -->
+  <!-- Back layer (subtle depth) -->
+  <rect x="6" y="5" width="22" height="26" rx="1.5" fill="#e9ecef" opacity="0.4"/>
+
+  <!-- Middle layer -->
+  <rect x="4" y="3" width="22" height="26" rx="1.5" fill="url(#docLayer2)" stroke="#dee2e6" stroke-width="0.5"/>
+
+  <!-- Front layer (main document) -->
+  <rect x="2" y="1" width="22" height="26" rx="1.5" fill="url(#docLayer1)" stroke="#adb5bd" stroke-width="1"/>
+
+  <!-- Document lines (representing content on pad) -->
+  <line x1="6" y1="7" x2="20" y2="7" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="6" y1="12" x2="16" y2="12" stroke="#ced4da" stroke-width="1" stroke-linecap="round"/>
+  <line x1="6" y1="16" x2="18" y2="16" stroke="#ced4da" stroke-width="1" stroke-linecap="round"/>
+  <line x1="6" y1="20" x2="14" y2="20" stroke="#ced4da" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Subtle corner fold (document detail) -->
+  <path d="M 20 1 L 24 1 L 24 5 L 20 1 Z" fill="#dee2e6"/>
+  <path d="M 20 1 L 24 5 L 20 5 Z" fill="url(#blueAccent)" opacity="0.12"/>
+</svg>

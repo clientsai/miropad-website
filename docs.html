@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs – Miropad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="miropad-icon.svg">
+    <style>
+        .docs-sidebar {
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding: 24px;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+        }
+        .docs-sidebar a {
+            display: block;
+            padding: 8px 12px;
+            font-family: -apple-system, sans-serif;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .docs-sidebar a:hover {
+            background: rgba(15, 76, 129, 0.05);
+            color: #0F4C81;
+        }
+        .docs-sidebar .section-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            margin: 20px 12px 8px;
+        }
+        .docs-content {
+            max-width: 800px;
+        }
+        .code-block {
+            background: #1a1a1a;
+            color: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .code-inline {
+            background: rgba(15, 76, 129, 0.08);
+            color: #0F4C81;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', monospace;
+            font-size: 13px;
+        }
+        .api-endpoint {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .api-method {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: 'SF Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 12px;
+        }
+        .method-get { background: rgba(15, 76, 129, 0.1); color: #0F4C81; }
+        .method-post { background: rgba(59, 130, 246, 0.1); color: #2563eb; }
+        .method-delete { background: rgba(239, 68, 68, 0.1); color: #dc2626; }
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        .param-table th {
+            text-align: left;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.02);
+            font-family: -apple-system, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #252525;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .param-table td {
+            padding: 12px;
+            font-family: -apple-system, sans-serif;
+            font-size: 14px;
+            color: #666;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .info-box {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            border-left: 4px solid;
+        }
+        .info-box.info {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: #3b82f6;
+        }
+        .info-box.warning {
+            background: rgba(245, 158, 11, 0.05);
+            border-color: #f59e0b;
+        }
+        .info-box.success {
+            background: rgba(15, 76, 129, 0.05);
+            border-color: #0F4C81;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="https://app.clients.ai" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 14V4M10 4L6 8M10 4L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="/docs" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 17C4 13.5 6.5 11 10 11C13.5 11 16 13.5 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- View Resource Modal -->
+        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <h2 id="modalTitle">Powered by Clients.ai</h2>
+                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
+                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
+                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
+            </div>
+        </div>
+
+        <div class="page-hero">
+            <h1>Documentation</h1>
+            <p class="hero-subtitle">Documentation for viewing AI-generated pads</p>
+            <div style="max-width: 700px; margin: 24px auto 0; padding: 16px 24px; background: rgba(15, 76, 129, 0.04); border: 1px solid rgba(15, 76, 129, 0.1); border-radius: 8px; text-align: center;">
+                <p style="font-size: 14px; color: #666; margin: 0;">
+                    <strong style="color: #0F4C81;">Automated for your AI platform members:</strong> All infrastructure operations are handled automatically by AI agents. This documentation is provided for transparency and technical reference.
+                </p>
+            </div>
+        </div>
+
+        <div style="max-width: 1200px; margin: 48px auto; padding: 0 24px;">
+            <div style="display: grid; grid-template-columns: 280px 1fr; gap: 48px;">
+                <!-- Sidebar Navigation -->
+                <div class="docs-sidebar">
+                    <div class="section-title">Getting Started</div>
+                    <a href="#overview">Overview</a>
+                    <a href="#quickstart">Quick Start</a>
+                    <a href="#authentication">Authentication</a>
+
+                    <div class="section-title">Core Concepts</div>
+                    <a href="#links">Link Management</a>
+                    <a href="#redirects">301 Redirects</a>
+                    <a href="#analytics">Analytics & Tracking</a>
+                    <a href="#verification">Link Verification</a>
+
+                    <div class="section-title">API Reference</div>
+                    <a href="#api-overview">API Overview</a>
+                    <a href="#api-links">Links API</a>
+                    <a href="#api-analytics">Analytics API</a>
+                    <a href="#api-webhooks">Webhooks</a>
+
+                    <div class="section-title">Integration</div>
+                    <a href="#sdks">SDKs & Libraries</a>
+                    <a href="#custom-domains">Custom Domains</a>
+                    <a href="#rate-limits">Rate Limits</a>
+                    <a href="#errors">Error Codes</a>
+
+                    <div class="section-title">Security</div>
+                    <a href="#security">Security Overview</a>
+                    <a href="#encryption">Encryption</a>
+                    <a href="#compliance">Compliance</a>
+
+                    <div class="section-title">Resources</div>
+                    <a href="#best-practices">Best Practices</a>
+                    <a href="#troubleshooting">Troubleshooting</a>
+                    <a href="#changelog">Changelog</a>
+                    <a href="#support">Support</a>
+                </div>
+
+                <!-- Main Documentation Content -->
+                <div class="docs-content">
+                    <!-- Overview -->
+                    <section id="overview" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 36px; font-weight: 700; color: #252525; margin-bottom: 20px;">Overview</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 20px;">
+                            Miropad is an enterprise-grade link delivery infrastructure service that provides secure, verified 301 redirects for content distribution. Operating as part of the Miropad system, Miropad facilitates encrypted, transparent routing from miropad.com URLs to destination content with full analytics and monitoring.
+                        </p>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8;">
+                            This documentation covers everything you need to integrate Miropad into your applications, for accessing and viewing AI-generated pads and webhook integrations.
+                        </p>
+
+                        <div class="info-box success">
+                            <strong style="display: block; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 8px;">Enterprise Features</strong>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;">99.9% uptime SLA · TLS 1.3 encryption · SOC 2 Type II certified · Real-time analytics · Custom domains · Webhook support</p>
+                        </div>
+                    </section>
+
+                    <!-- Quick Start -->
+                    <section id="quickstart" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Quick Start</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Get started with Miropad in minutes. This guide walks you through creating your first link and tracking engagement.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Step 1: Generate API Key</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 16px;">
+                            Contact <a href="mailto:support@miropad.com" style="color: #0F4C81; font-weight: 600; text-decoration: none;">support@miropad.com</a> to request API access credentials.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Step 2: Create Your First Link</h3>
+                        <div class="code-block">POST https://api.miropad.com/v1/links
+Content-Type: application/json
+Authorization: Bearer YOUR_API_KEY
+
+{
+  "destination": "https://example.com/content",
+  "slug": "example-link",
+  "metadata": {
+    "campaign": "summer-2025",
+    "source": "email"
+  }
+}</div>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Step 3: Use Your Link</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">
+                            Share your link: <span class="code-inline">https://miropad.com/example-link</span>
+                        </p>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-top: 12px;">
+                            When clicked, Miropad will verify the link, log analytics data, and redirect to your destination with a 301 permanent redirect.
+                        </p>
+                    </section>
+
+                    <!-- Authentication -->
+                    <section id="authentication" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Authentication</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Miropad uses API keys to authenticate requests. Include your API key in the <span class="code-inline">Authorization</span> header with Bearer authentication.
+                        </p>
+
+                        <div class="code-block">Authorization: Bearer YOUR_API_KEY_HERE</div>
+
+                        <div class="info-box warning">
+                            <strong style="display: block; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 8px;">Security Best Practice</strong>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Never expose API keys in client-side code or public repositories. Store keys securely as environment variables and rotate them periodically.</p>
+                        </div>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">API Key Types</h3>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Prefix</th>
+                                    <th>Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="code-inline">Live</span></td>
+                                    <td><span class="code-inline">sk_live_</span></td>
+                                    <td>Production environment</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">Test</span></td>
+                                    <td><span class="code-inline">sk_test_</span></td>
+                                    <td>Development and testing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Link Management -->
+                    <section id="links" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Link Management</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Miropad links are permanent 301 redirects from miropad.com URLs to your destination content. Each link can include custom slugs, metadata, and tracking parameters.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Link Anatomy</h3>
+                        <div class="code-block">https://miropad.com/<span style="color: #0F4C81;">your-custom-slug</span>
+                          │         │             │
+                          │         │             └─ Custom identifier (optional)
+                          │         └─ Miropad domain
+                          └─ HTTPS protocol (enforced)</div>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Link Properties</h3>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Property</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="code-inline">id</span></td>
+                                    <td>string</td>
+                                    <td>Unique link identifier</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">destination</span></td>
+                                    <td>string</td>
+                                    <td>Target URL (must be valid HTTPS)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">slug</span></td>
+                                    <td>string</td>
+                                    <td>Custom URL path (optional)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">metadata</span></td>
+                                    <td>object</td>
+                                    <td>Custom key-value data</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">created_at</span></td>
+                                    <td>timestamp</td>
+                                    <td>Creation time (ISO 8601)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">clicks</span></td>
+                                    <td>integer</td>
+                                    <td>Total click count</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- 301 Redirects -->
+                    <section id="redirects" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">301 Redirects</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Miropad uses HTTP 301 (Permanent Redirect) status codes for all link redirects. This ensures proper SEO handling and browser caching while maintaining full analytics tracking.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Redirect Flow</h3>
+                        <div class="code-block">1. User clicks miropad.com/example-link
+2. Miropad receives request
+3. Verifies link exists and is active
+4. Logs engagement data (IP, user agent, timestamp)
+5. Returns 301 redirect to destination
+6. User arrives at destination content
+7. Analytics available via API</div>
+
+                        <div class="info-box info">
+                            <strong style="display: block; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 8px;">Performance</strong>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Average redirect latency: < 50ms. All redirects are served from globally distributed edge nodes for maximum speed.</p>
+                        </div>
+                    </section>
+
+                    <!-- Analytics & Tracking -->
+                    <section id="analytics" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Analytics & Tracking</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Every link click is tracked with detailed engagement data. Access analytics via API to understand link performance, user behavior, and campaign effectiveness.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Tracked Data Points</h3>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Data Point</th>
+                                    <th>Description</th>
+                                    <th>Privacy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="code-inline">timestamp</span></td>
+                                    <td>Click time (UTC)</td>
+                                    <td>Always collected</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">ip_address</span></td>
+                                    <td>Anonymized IP (last octet removed)</td>
+                                    <td>Anonymized</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">user_agent</span></td>
+                                    <td>Browser and device information</td>
+                                    <td>Standard web logging</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">referrer</span></td>
+                                    <td>Source page URL</td>
+                                    <td>Standard HTTP header</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">location</span></td>
+                                    <td>Country and region (derived from IP)</td>
+                                    <td>Approximate only</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box success">
+                            <strong style="display: block; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 8px;">GDPR Compliant</strong>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;">All analytics data collection complies with GDPR, CCPA, and other privacy regulations. Users can request data deletion via <a href="mailto:privacy@miropad.com" style="color: #0F4C81; font-weight: 600;">privacy@miropad.com</a>.</p>
+                        </div>
+                    </section>
+
+                    <!-- Link Verification -->
+                    <section id="verification" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Link Verification</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Every Miropad link is verified before redirect to ensure security, prevent abuse, and maintain service integrity.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Verification Checks</h3>
+                        <ul style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.8; padding-left: 24px;">
+                            <li>Link exists in database</li>
+                            <li>Destination URL is valid HTTPS</li>
+                            <li>Link is not expired or deactivated</li>
+                            <li>Rate limits not exceeded</li>
+                            <li>No malicious content detected</li>
+                            <li>Compliance with Terms of Service</li>
+                        </ul>
+                    </section>
+
+                    <!-- API Overview -->
+                    <section id="api-overview" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">API Overview</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            The Miropad API is a RESTful API that accepts JSON-encoded request bodies and returns JSON-encoded responses. All API requests must be made over HTTPS.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Base URL</h3>
+                        <div class="code-block">https://api.miropad.com/v1</div>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">API Versioning</h3>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">
+                            The Miropad API uses URL-based versioning. Current version: <span class="code-inline">v1</span>. We maintain backward compatibility and provide advance notice of breaking changes.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Request Headers</h3>
+                        <div class="code-block">Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+Accept: application/json</div>
+                    </section>
+
+                    <!-- Links API -->
+                    <section id="api-links" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Links API</h2>
+
+                        <!-- Create Link -->
+                        <div class="api-endpoint">
+                            <div style="margin-bottom: 16px;">
+                                <span class="api-method method-post">POST</span>
+                                <span class="code-inline">/v1/links</span>
+                            </div>
+                            <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 16px;">Create a new link</h3>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px;">Creates a new Miropad link with optional custom slug and metadata.</p>
+
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 12px;">Request Body</h4>
+                            <div class="code-block">{
+  "destination": "https://example.com/content",
+  "slug": "custom-slug",
+  "metadata": {
+    "campaign": "spring-2025",
+    "source": "newsletter"
+  }
+}</div>
+
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin: 24px 0 12px;">Response</h4>
+                            <div class="code-block">{
+  "id": "lnk_1a2b3c4d5e6f",
+  "url": "https://miropad.com/custom-slug",
+  "destination": "https://example.com/content",
+  "slug": "custom-slug",
+  "metadata": {
+    "campaign": "spring-2025",
+    "source": "newsletter"
+  },
+  "created_at": "2025-01-15T10:30:00Z",
+  "clicks": 0
+}</div>
+                        </div>
+
+                        <!-- Get Link -->
+                        <div class="api-endpoint">
+                            <div style="margin-bottom: 16px;">
+                                <span class="api-method method-get">GET</span>
+                                <span class="code-inline">/v1/links/:id</span>
+                            </div>
+                            <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 16px;">Retrieve a link</h3>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">Retrieves details for a specific link including current click count.</p>
+                        </div>
+
+                        <!-- List Links -->
+                        <div class="api-endpoint">
+                            <div style="margin-bottom: 16px;">
+                                <span class="api-method method-get">GET</span>
+                                <span class="code-inline">/v1/links</span>
+                            </div>
+                            <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 16px;">List all links</h3>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px;">Returns a paginated list of all links in your account.</p>
+
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 12px;">Query Parameters</h4>
+                            <table class="param-table">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="code-inline">limit</span></td>
+                                        <td>integer</td>
+                                        <td>Number of results (max 100)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="code-inline">offset</span></td>
+                                        <td>integer</td>
+                                        <td>Pagination offset</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Delete Link -->
+                        <div class="api-endpoint">
+                            <div style="margin-bottom: 16px;">
+                                <span class="api-method method-delete">DELETE</span>
+                                <span class="code-inline">/v1/links/:id</span>
+                            </div>
+                            <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 16px;">Delete a link</h3>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7;">Permanently deletes a link. This action cannot be undone.</p>
+                        </div>
+                    </section>
+
+                    <!-- Analytics API -->
+                    <section id="api-analytics" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Analytics API</h2>
+
+                        <div class="api-endpoint">
+                            <div style="margin-bottom: 16px;">
+                                <span class="api-method method-get">GET</span>
+                                <span class="code-inline">/v1/analytics/:link_id</span>
+                            </div>
+                            <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 16px;">Get link analytics</h3>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px;">Retrieves detailed analytics for a specific link.</p>
+
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 12px;">Query Parameters</h4>
+                            <table class="param-table">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="code-inline">start_date</span></td>
+                                        <td>string</td>
+                                        <td>Start date (ISO 8601)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="code-inline">end_date</span></td>
+                                        <td>string</td>
+                                        <td>End date (ISO 8601)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="code-inline">granularity</span></td>
+                                        <td>string</td>
+                                        <td>hour, day, week, month</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin: 24px 0 12px;">Response</h4>
+                            <div class="code-block">{
+  "link_id": "lnk_1a2b3c4d5e6f",
+  "total_clicks": 1247,
+  "unique_clicks": 892,
+  "time_series": [
+    {"date": "2025-01-15", "clicks": 45},
+    {"date": "2025-01-16", "clicks": 67}
+  ],
+  "countries": {
+    "US": 512,
+    "CA": 203,
+    "UK": 156
+  },
+  "referrers": {
+    "twitter.com": 423,
+    "linkedin.com": 278,
+    "direct": 546
+  }
+}</div>
+                        </div>
+                    </section>
+
+                    <!-- Webhooks -->
+                    <section id="api-webhooks" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Webhooks</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Webhooks allow you to receive real-time notifications when events occur on your links. Configure webhook endpoints to receive HTTP POST requests for click events.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Supported Events</h3>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="code-inline">link.clicked</span></td>
+                                    <td>Triggered when a link is clicked</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">link.created</span></td>
+                                    <td>Triggered when a new link is created</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="code-inline">link.deleted</span></td>
+                                    <td>Triggered when a link is deleted</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Webhook Payload Example</h3>
+                        <div class="code-block">{
+  "event": "link.clicked",
+  "timestamp": "2025-01-15T10:30:00Z",
+  "data": {
+    "link_id": "lnk_1a2b3c4d5e6f",
+    "destination": "https://example.com/content",
+    "ip_address": "192.168.1.xxx",
+    "user_agent": "Mozilla/5.0...",
+    "referrer": "https://twitter.com",
+    "country": "US"
+  }
+}</div>
+
+                        <div class="info-box warning">
+                            <strong style="display: block; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 8px;">Webhook Security</strong>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Verify webhook signatures using the <span class="code-inline">X-Miropad-Signature</span> header to ensure requests originate from Miropad.</p>
+                        </div>
+                    </section>
+
+                    <!-- SDKs & Libraries -->
+                    <section id="sdks" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">SDKs & Libraries</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Official SDKs available for popular programming languages. All libraries are open source and maintained by the Miropad team.
+                        </p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px;">
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #252525; margin-bottom: 12px;">Node.js</h3>
+                                <div class="code-block" style="margin: 12px 0; font-size: 12px;">npm install @miropad/node</div>
+                            </div>
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #252525; margin-bottom: 12px;">Python</h3>
+                                <div class="code-block" style="margin: 12px 0; font-size: 12px;">pip install miropad</div>
+                            </div>
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #252525; margin-bottom: 12px;">Ruby</h3>
+                                <div class="code-block" style="margin: 12px 0; font-size: 12px;">gem install miropad</div>
+                            </div>
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #252525; margin-bottom: 12px;">Go</h3>
+                                <div class="code-block" style="margin: 12px 0; font-size: 12px;">go get github.com/miropad/go</div>
+                            </div>
+                        </div>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Node.js Example</h3>
+                        <div class="code-block">const Miropad = require('@miropad/node');
+
+const client = new Miropad('sk_live_...');
+
+// Create a link
+const link = await client.links.create({
+  destination: 'https://example.com/content',
+  slug: 'my-link'
+});
+
+console.log(link.url); // https://miropad.com/my-link</div>
+                    </section>
+
+                    <!-- Custom Domains -->
+                    <section id="custom-domains" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Custom Domains</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Enterprise customers can use custom domains for branded link experience (e.g., <span class="code-inline">go.yourbrand.com</span>). Contact <a href="mailto:support@miropad.com" style="color: #0F4C81; font-weight: 600; text-decoration: none;">support@miropad.com</a> for setup assistance.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">DNS Configuration</h3>
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Record Type</th>
+                                    <th>Name</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CNAME</td>
+                                    <td>go.yourbrand.com</td>
+                                    <td>custom.miropad.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box success">
+                            <strong style="display: block; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 8px;">Free SSL Certificate</strong>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;">Miropad automatically provisions and renews SSL certificates for all custom domains at no additional cost.</p>
+                        </div>
+                    </section>
+
+                    <!-- Rate Limits -->
+                    <section id="rate-limits" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Rate Limits</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            API requests are rate limited to ensure service reliability and fair usage. Rate limits are applied per API key.
+                        </p>
+
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Requests/Second</th>
+                                    <th>Requests/Hour</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Standard</td>
+                                    <td>10</td>
+                                    <td>10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Enterprise</td>
+                                    <td>100</td>
+                                    <td>100,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Rate Limit Headers</h3>
+                        <div class="code-block">X-RateLimit-Limit: 10000
+X-RateLimit-Remaining: 9456
+X-RateLimit-Reset: 1642251600</div>
+
+                        <div class="info-box warning">
+                            <strong style="display: block; font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #252525; margin-bottom: 8px;">Rate Limit Exceeded</strong>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;">When rate limit is exceeded, API returns <span class="code-inline">429 Too Many Requests</span>. Implement exponential backoff for retries.</p>
+                        </div>
+                    </section>
+
+                    <!-- Error Codes -->
+                    <section id="errors" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Error Codes</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Miropad uses conventional HTTP response codes to indicate success or failure of API requests.
+                        </p>
+
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Status</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>200</td>
+                                    <td>OK</td>
+                                    <td>Request successful</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Created</td>
+                                    <td>Resource created successfully</td>
+                                </tr>
+                                <tr>
+                                    <td>400</td>
+                                    <td>Bad Request</td>
+                                    <td>Invalid request parameters</td>
+                                </tr>
+                                <tr>
+                                    <td>401</td>
+                                    <td>Unauthorized</td>
+                                    <td>Invalid or missing API key</td>
+                                </tr>
+                                <tr>
+                                    <td>404</td>
+                                    <td>Not Found</td>
+                                    <td>Resource does not exist</td>
+                                </tr>
+                                <tr>
+                                    <td>429</td>
+                                    <td>Too Many Requests</td>
+                                    <td>Rate limit exceeded</td>
+                                </tr>
+                                <tr>
+                                    <td>500</td>
+                                    <td>Internal Server Error</td>
+                                    <td>Miropad server error</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Error Response Format</h3>
+                        <div class="code-block">{
+  "error": {
+    "type": "invalid_request",
+    "message": "Missing required parameter: destination",
+    "param": "destination",
+    "code": "parameter_missing"
+  }
+}</div>
+                    </section>
+
+                    <!-- Security Overview -->
+                    <section id="security" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Security Overview</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Miropad implements enterprise-grade security controls across all layers of infrastructure. Visit our <a href="/security" style="color: #0F4C81; font-weight: 600; text-decoration: none;">Security page</a> for complete details.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Security Features</h3>
+                        <ul style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.9; padding-left: 24px;">
+                            <li>TLS 1.3 encryption for all connections</li>
+                            <li>256-bit AES encryption at rest</li>
+                            <li>Web Application Firewall (WAF)</li>
+                            <li>DDoS protection and rate limiting</li>
+                            <li>24/7 security monitoring</li>
+                            <li>Automated security patching</li>
+                            <li>Regular penetration testing</li>
+                            <li>Incident response procedures</li>
+                        </ul>
+                    </section>
+
+                    <!-- Encryption -->
+                    <section id="encryption" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Encryption</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            All Miropad traffic is encrypted using industry-standard protocols. Data is encrypted both in transit and at rest.
+                        </p>
+
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Layer</th>
+                                    <th>Protocol</th>
+                                    <th>Strength</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Transport</td>
+                                    <td>TLS 1.3</td>
+                                    <td>Perfect forward secrecy</td>
+                                </tr>
+                                <tr>
+                                    <td>Data at Rest</td>
+                                    <td>AES-256-GCM</td>
+                                    <td>Military-grade encryption</td>
+                                </tr>
+                                <tr>
+                                    <td>Backups</td>
+                                    <td>AES-256</td>
+                                    <td>Encrypted backups</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Compliance -->
+                    <section id="compliance" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Compliance</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Miropad maintains compliance with major security standards and privacy regulations.
+                        </p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">SOC 2 Type II</h3>
+                                <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7;">Annual third-party security audits verifying our controls and procedures.</p>
+                            </div>
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">ISO 27001</h3>
+                                <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7;">Information security management system certification.</p>
+                            </div>
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">GDPR</h3>
+                                <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7;">Full compliance with European Union data protection requirements.</p>
+                            </div>
+                            <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">CCPA</h3>
+                                <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7;">California Consumer Privacy Act compliance.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Best Practices -->
+                    <section id="best-practices" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Best Practices</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Follow these recommendations for optimal Miropad integration.
+                        </p>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">API Key Management</h3>
+                        <ul style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.9; padding-left: 24px;">
+                            <li>Never commit API keys to source control</li>
+                            <li>Use environment variables for key storage</li>
+                            <li>Rotate keys regularly (every 90 days)</li>
+                            <li>Use separate keys for development and production</li>
+                            <li>Revoke compromised keys immediately</li>
+                        </ul>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Link Management</h3>
+                        <ul style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.9; padding-left: 24px;">
+                            <li>Use descriptive slugs for better analytics</li>
+                            <li>Include metadata for campaign tracking</li>
+                            <li>Delete unused links to maintain organization</li>
+                            <li>Use HTTPS destinations only</li>
+                            <li>Validate destination URLs before creation</li>
+                        </ul>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Error Handling</h3>
+                        <ul style="font-family: -apple-system, sans-serif; font-size: 15px; color: #666; line-height: 1.9; padding-left: 24px;">
+                            <li>Implement exponential backoff for retries</li>
+                            <li>Handle rate limits gracefully</li>
+                            <li>Log all API errors for debugging</li>
+                            <li>Validate responses before processing</li>
+                            <li>Set appropriate timeout values</li>
+                        </ul>
+                    </section>
+
+                    <!-- Troubleshooting -->
+                    <section id="troubleshooting" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Troubleshooting</h2>
+
+                        <h3 style="font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 600; color: #252525; margin: 32px 0 16px;">Common Issues</h3>
+
+                        <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #252525; margin-bottom: 12px;">401 Unauthorized Error</h4>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 12px;">
+                                <strong>Cause:</strong> Invalid or missing API key in Authorization header.
+                            </p>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7;">
+                                <strong>Solution:</strong> Verify API key format and ensure Bearer prefix is included.
+                            </p>
+                        </div>
+
+                        <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #252525; margin-bottom: 12px;">404 Not Found on Redirect</h4>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 12px;">
+                                <strong>Cause:</strong> Link slug does not exist or was deleted.
+                            </p>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7;">
+                                <strong>Solution:</strong> Verify link was created successfully and slug matches exactly.
+                            </p>
+                        </div>
+
+                        <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #252525; margin-bottom: 12px;">429 Rate Limit Exceeded</h4>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 12px;">
+                                <strong>Cause:</strong> Too many requests in short time period.
+                            </p>
+                            <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7;">
+                                <strong>Solution:</strong> Implement exponential backoff. Check X-RateLimit-Reset header for reset time.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Changelog -->
+                    <section id="changelog" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Changelog</h2>
+
+                        <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px; border-left: 4px solid #0F4C81; margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin: 0;">v1.2.0</h3>
+                                <span style="font-family: SF Mono, monospace; font-size: 12px; color: #999;">2025-01-15</span>
+                            </div>
+                            <ul style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; padding-left: 20px; margin: 0;">
+                                <li>Added webhook support for link events</li>
+                                <li>Improved analytics API performance</li>
+                                <li>Enhanced rate limit headers</li>
+                            </ul>
+                        </div>
+
+                        <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px; border-left: 4px solid #999; margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin: 0;">v1.1.0</h3>
+                                <span style="font-family: SF Mono, monospace; font-size: 12px; color: #999;">2024-12-01</span>
+                            </div>
+                            <ul style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; padding-left: 20px; margin: 0;">
+                                <li>Custom domain support for Enterprise customers</li>
+                                <li>Analytics export functionality</li>
+                                <li>Improved error messages</li>
+                            </ul>
+                        </div>
+
+                        <div style="padding: 24px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 8px; border-left: 4px solid #999; margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin: 0;">v1.0.0</h3>
+                                <span style="font-family: SF Mono, monospace; font-size: 12px; color: #999;">2024-10-15</span>
+                            </div>
+                            <ul style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; padding-left: 20px; margin: 0;">
+                                <li>Initial API release</li>
+                                <li>Pad viewing and access</li>
+                                <li>Basic analytics</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Support -->
+                    <section id="support" style="margin-bottom: 64px;">
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #252525; margin-bottom: 20px;">Support</h2>
+                        <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #4b5563; line-height: 1.8; margin-bottom: 24px;">
+                            Need help? Our team is here to assist with technical questions, integration support, and account issues.
+                        </p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div style="padding: 32px; background: linear-gradient(135deg, rgba(15, 76, 129, 0.05) 0%, rgba(15, 76, 129, 0.02) 100%); border: 1px solid rgba(15, 76, 129, 0.15); border-radius: 12px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">Technical Support</h3>
+                                <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 16px;">Get help with API integration, troubleshooting, and technical questions.</p>
+                                <a href="mailto:support@miropad.com" style="font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #0F4C81; text-decoration: none;">support@miropad.com →</a>
+                            </div>
+
+                            <div style="padding: 32px; background: linear-gradient(135deg, rgba(15, 76, 129, 0.05) 0%, rgba(15, 76, 129, 0.02) 100%); border: 1px solid rgba(15, 76, 129, 0.15); border-radius: 12px;">
+                                <h3 style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 600; color: #252525; margin-bottom: 12px;">System Status</h3>
+                                <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 16px;">Check real-time service status and incident history.</p>
+                                <a href="/status" style="font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 600; color: #0F4C81; text-decoration: none;">View Status →</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <footer class="ive-footer">
+            <div class="footer-wrapper">
+                <nav class="footer-main-nav">
+                    <a href="/about" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="7" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <a href="/security" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 4V9C4 13 6.5 16.5 10 18.5C13.5 16.5 16 13 16 9V4L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7.5 10L9 11.5L12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Security</span>
+                    </a>
+                    <a href="/docs" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Docs</span>
+                    </a>
+                    <a href="/support" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 13C7 13 8.5 15 10 15C11.5 15 13 13 13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7.5" cy="8.5" r="0.5" fill="currentColor"/>
+                            <circle cx="12.5" cy="8.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>Support</span>
+                    </a>
+                </nav>
+                <div class="footer-meta">
+                    <p class="footer-copyright">© <span id="current-year">2025</span> your AI platform</p>
+                    <p class="footer-tagline">A Miropad System</p>
+                    <nav class="footer-legal-nav">
+                        <a href="/status">Status</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+    // Upload Modal
+    (function() {
+        const modal = document.getElementById('uploadModal');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        uploadBtn.addEventListener('click', openModal);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy – Miropad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="miropad-icon.svg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="https://app.clients.ai" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 14V4M10 4L6 8M10 4L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="/docs" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 17C4 13.5 6.5 11 10 11C13.5 11 16 13.5 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- View Resource Modal -->
+        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <h2 id="modalTitle">Powered by Clients.ai</h2>
+                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
+                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
+                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
+            </div>
+        </div>
+
+        <div class="page-hero">
+            <h1>Privacy Policy</h1>
+            <p class="hero-subtitle">Last updated: October 25, 2025</p>
+        </div>
+
+        <!-- Data Flow Visualization -->
+        <div class="page-visualization">
+            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-label="Data flow and protection visualization">
+                <defs>
+                    <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#0F4C81;stop-opacity:0.1" />
+                    </linearGradient>
+
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#0F4C81" opacity="0.4"/>
+                    </marker>
+
+                    <filter id="nodeGlow">
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feMerge>
+                            <feMergeNode/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Background -->
+                <pattern id="privacyGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+                    <path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="1"/>
+                </pattern>
+                <rect width="800" height="400" fill="url(#privacyGrid)"/>
+
+                <!-- Data flow paths -->
+                <g opacity="0.3" stroke="#0F4C81" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+                    <!-- Recipient to Miropad -->
+                    <path d="M 120 200 L 280 200">
+                        <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" repeatCount="indefinite"/>
+                    </path>
+                    <!-- Miropad to Sender -->
+                    <path d="M 420 200 L 550 140">
+                        <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                    </path>
+                    <!-- Miropad to Partners -->
+                    <path d="M 420 200 L 550 260">
+                        <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                    </path>
+                </g>
+
+                <!-- Recipient (left) -->
+                <g transform="translate(80, 200)">
+                    <circle cx="0" cy="0" r="32" fill="rgba(255,255,255,0.9)" stroke="rgba(0,0,0,0.1)" stroke-width="1.5"/>
+                    <circle cx="0" cy="-8" r="10" fill="none" stroke="#666" stroke-width="1.5"/>
+                    <path d="M -12 12 C -12 12 -10 8 0 8 C 10 8 12 12 12 12" fill="none" stroke="#666" stroke-width="1.5"/>
+                    <text x="0" y="50" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#666">Recipient</text>
+                    <text x="0" y="65" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#999">CLICKS LINK</text>
+                </g>
+
+                <!-- Miropad (center) -->
+                <g transform="translate(350, 200)">
+                    <circle cx="0" cy="0" r="48" fill="rgba(15, 76, 129, 0.08)"/>
+                    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.95)" stroke="#0F4C81" stroke-width="2.5"/>
+                    <!-- Shield icon -->
+                    <path d="M0 -16L-8 -12V-4C-8 0 -4 6 0 8C4 6 8 0 8 -4V-12L0 -16Z" fill="none" stroke="#0F4C81" stroke-width="1.5"/>
+                    <path d="M-4 -2L-1 1L4 -5" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="0" y="60" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Miropad</text>
+                    <text x="0" y="75" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#0F4C81">PROCESSES</text>
+                </g>
+
+                <!-- Sender (top right) -->
+                <g transform="translate(630, 140)">
+                    <circle cx="0" cy="0" r="32" fill="rgba(255,255,255,0.9)" stroke="rgba(0,0,0,0.1)" stroke-width="1.5"/>
+                    <circle cx="0" cy="-8" r="10" fill="none" stroke="#666" stroke-width="1.5"/>
+                    <path d="M -12 12 C -12 12 -10 8 0 8 C 10 8 12 12 12 12" fill="none" stroke="#666" stroke-width="1.5"/>
+                    <text x="0" y="50" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#666">Sender</text>
+                    <text x="0" y="65" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#999">RECEIVES DATA</text>
+                </g>
+
+                <!-- Partner Network (bottom right) -->
+                <g transform="translate(630, 260)">
+                    <rect x="-40" y="-30" width="80" height="60" rx="6" fill="rgba(255,255,255,0.9)" stroke="rgba(0,0,0,0.1)" stroke-width="1.5"/>
+                    <!-- 8 small dots representing partners -->
+                    <circle cx="-20" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="-6" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="8" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="22" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="-20" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="-6" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="8" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="22" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <text x="0" y="50" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#666">Partner Network</text>
+                    <text x="0" y="65" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#999">8 PARTNERS</text>
+                </g>
+
+                <!-- Encryption indicators -->
+                <g transform="translate(200, 180)">
+                    <rect x="0" y="0" width="20" height="14" rx="2" fill="none" stroke="#0F4C81" stroke-width="1" opacity="0.5"/>
+                    <circle cx="10" cy="7" r="2" fill="#0F4C81" opacity="0.5"/>
+                    <text x="10" y="28" text-anchor="middle" font-family="SF Mono, monospace" font-size="8" fill="#999">TLS 1.3</text>
+                </g>
+
+                <g transform="translate(480, 180)">
+                    <rect x="0" y="0" width="20" height="14" rx="2" fill="none" stroke="#0F4C81" stroke-width="1" opacity="0.5"/>
+                    <circle cx="10" cy="7" r="2" fill="#0F4C81" opacity="0.5"/>
+                    <text x="10" y="28" text-anchor="middle" font-family="SF Mono, monospace" font-size="8" fill="#999">ENCRYPTED</text>
+                </g>
+
+                <!-- Footer text -->
+                <g font-family="SF Mono, monospace" font-size="10" fill="#999">
+                    <text x="400" y="375" text-anchor="middle">TRANSPARENT DATA SHARING · GDPR & CCPA COMPLIANT · YOUR RIGHTS PROTECTED</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Overview</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Miropad is a link delivery utility operated as part of the Miropad system, powered by your AI platform.
+                    When you access a Miropad link, we process and share your interaction data to facilitate secure content delivery
+                    and improve the services provided by our network.
+                </p>
+            </div>
+        </div>
+
+        <!-- Information We Collect Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Information We Collect</h2>
+            </div>
+            <div class="section-body">
+                <p>When you access a Miropad link, we may collect:</p>
+                <ul class="feature-list">
+                    <li>Click timestamp and redirect destination</li>
+                    <li>Device type, browser information, and IP address</li>
+                    <li>Referring source and link identifier</li>
+                    <li>Any information submitted through forms or interactions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Data Sharing Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Data Sharing</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    By accessing a Miropad link, you acknowledge and agree that your interaction data may be shared with:
+                </p>
+
+                <div class="data-sharing-cards">
+                    <div class="sharing-card">
+                        <h3>The Sender</h3>
+                        <p>
+                            The individual or organization who sent you the Miropad link will receive information about your
+                            interaction, including click data, engagement metrics, and any information you provide through
+                            subsequent interactions.
+                        </p>
+                    </div>
+
+                    <div class="sharing-card">
+                        <h3>Partner Network</h3>
+                        <p>
+                            Miropad operates within a network of integrated services. Your data may be shared with our partner
+                            companies to provide unified service delivery, analytics, and support. These partners include:
+                        </p>
+                        <ul class="partner-list">
+                            <li>your AI platform (primary platform provider)</li>
+                            <li>Prognostic.ai</li>
+                            <li>Punctual.ai</li>
+                            <li>Enclose.ai</li>
+                            <li>Enclosed.ai</li>
+                            <li>CompanyAgent.ai</li>
+                            <li>ePub.ai</li>
+                            <li>Psych.ai</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Use Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Data Use</h2>
+            </div>
+            <div class="section-body">
+                <p>The data we collect and share is used to:</p>
+                <ul class="feature-list">
+                    <li>Facilitate secure content delivery</li>
+                    <li>Provide analytics and engagement metrics to senders</li>
+                    <li>Improve our services and infrastructure</li>
+                    <li>Enable coordinated service delivery across our partner network</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Data Security Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Data Security</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    We implement industry-standard security measures to protect data in transit and at rest.
+                    However, no method of internet transmission is completely secure, and we cannot guarantee absolute security.
+                    For more details, see our <a href="/security">Security page</a>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Your Rights Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Your Rights</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Depending on your location, you may have rights regarding your personal data, including access,
+                    correction, or deletion. To exercise these rights, please contact the sender of your Miropad link
+                    or reach out to <a href="mailto:privacy@miropad.com">privacy@miropad.com</a>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Changes to This Policy Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Changes to This Policy</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    We may update this Privacy Policy from time to time. Changes will be posted on this page with
+                    an updated "Last updated" date. Continued use of Miropad after changes constitutes acceptance of the updated policy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="content-section" style="border-bottom: none;">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Questions about this Privacy Policy should be directed to <a href="mailto:privacy@miropad.com">privacy@miropad.com</a>.
+                </p>
+            </div>
+        </div>
+
+        <footer class="ive-footer">
+            <div class="footer-wrapper">
+                <nav class="footer-main-nav">
+                    <a href="/about" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="7" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <a href="/security" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 4V9C4 13 6.5 16.5 10 18.5C13.5 16.5 16 13 16 9V4L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7.5 10L9 11.5L12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Security</span>
+                    </a>
+                    <a href="/docs" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Docs</span>
+                    </a>
+                    <a href="/support" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 13C7 13 8.5 15 10 15C11.5 15 13 13 13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7.5" cy="8.5" r="0.5" fill="currentColor"/>
+                            <circle cx="12.5" cy="8.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>Support</span>
+                    </a>
+                </nav>
+                <div class="footer-meta">
+                    <p class="footer-copyright">© <span id="current-year">2025</span> your AI platform</p>
+                    <p class="footer-tagline">A Miropad System</p>
+                    <nav class="footer-legal-nav">
+                        <a href="/status">Status</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+    // Upload Modal
+    (function() {
+        const modal = document.getElementById('uploadModal');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        uploadBtn.addEventListener('click', openModal);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

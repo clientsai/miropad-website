@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms – Miropad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="miropad-icon.svg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="https://app.clients.ai" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 14V4M10 4L6 8M10 4L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="/docs" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 17C4 13.5 6.5 11 10 11C13.5 11 16 13.5 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- View Resource Modal -->
+        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <h2 id="modalTitle">Powered by Clients.ai</h2>
+                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
+                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
+                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
+            </div>
+        </div>
+
+        <div class="page-hero">
+            <h1>Terms of Service</h1>
+            <p class="hero-subtitle">Last updated: October 25, 2025</p>
+        </div>
+
+        <!-- Policy Framework Visualization -->
+        <div class="page-visualization">
+            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-label="Terms of service framework">
+                <defs>
+                    <linearGradient id="termsGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+                        <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:0.15" />
+                        <stop offset="100%" style="stop-color:#0F4C81;stop-opacity:0.03" />
+                    </linearGradient>
+
+                    <filter id="termsShadow">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                        <feOffset dx="0" dy="1" result="offsetblur"/>
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="0.2"/>
+                        </feComponentTransfer>
+                        <feMerge>
+                            <feMergeNode/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Background -->
+                <pattern id="termsGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+                    <path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="1"/>
+                </pattern>
+                <rect width="800" height="400" fill="url(#termsGrid)"/>
+
+                <!-- Central policy document -->
+                <g transform="translate(400, 200)" filter="url(#termsShadow)">
+                    <rect x="-140" y="-160" width="280" height="320" rx="8" fill="rgba(255,255,255,0.9)" stroke="rgba(0,0,0,0.08)" stroke-width="2"/>
+
+                    <!-- Document header -->
+                    <rect x="-120" y="-140" width="240" height="40" rx="4" fill="rgba(15, 76, 129, 0.08)"/>
+                    <text x="0" y="-116" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Terms of Service</text>
+
+                    <!-- Document sections -->
+                    <g font-family="-apple-system, sans-serif" font-size="11" fill="#666">
+                        <!-- Section 1 -->
+                        <rect x="-120" y="-90" width="50" height="6" rx="2" fill="rgba(15, 76, 129, 0.3)"/>
+                        <rect x="-65" y="-90" width="70" height="6" rx="2" fill="rgba(0,0,0,0.05)"/>
+                        <rect x="-120" y="-78" width="90" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+                        <rect x="-120" y="-70" width="75" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+
+                        <!-- Section 2 -->
+                        <rect x="-120" y="-50" width="60" height="6" rx="2" fill="rgba(15, 76, 129, 0.3)"/>
+                        <rect x="-55" y="-50" width="80" height="6" rx="2" fill="rgba(0,0,0,0.05)"/>
+                        <rect x="-120" y="-38" width="100" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+                        <rect x="-120" y="-30" width="85" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+
+                        <!-- Section 3 -->
+                        <rect x="-120" y="-10" width="55" height="6" rx="2" fill="rgba(15, 76, 129, 0.3)"/>
+                        <rect x="-60" y="-10" width="75" height="6" rx="2" fill="rgba(0,0,0,0.05)"/>
+                        <rect x="-120" y="2" width="95" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+                        <rect x="-120" y="10" width="70" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+
+                        <!-- Section 4 -->
+                        <rect x="-120" y="30" width="65" height="6" rx="2" fill="rgba(15, 76, 129, 0.3)"/>
+                        <rect x="-50" y="30" width="90" height="6" rx="2" fill="rgba(0,0,0,0.05)"/>
+                        <rect x="-120" y="42" width="105" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+                        <rect x="-120" y="50" width="80" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+
+                        <!-- Section 5 -->
+                        <rect x="-120" y="70" width="50" height="6" rx="2" fill="rgba(15, 76, 129, 0.3)"/>
+                        <rect x="-65" y="70" width="70" height="6" rx="2" fill="rgba(0,0,0,0.05)"/>
+                        <rect x="-120" y="82" width="90" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+                        <rect x="-120" y="90" width="75" height="4" rx="1" fill="rgba(0,0,0,0.03)"/>
+
+                        <!-- Signature area -->
+                        <path d="M -80 130 Q -50 125, -40 130 T 0 125 T 40 130 T 80 125" fill="none" stroke="#0F4C81" stroke-width="1.5" opacity="0.4"/>
+                        <text x="0" y="150" text-anchor="middle" font-size="9" fill="#999">Effective October 25, 2025</text>
+                    </g>
+
+                    <!-- Shield icon (top right of document) -->
+                    <g transform="translate(100, -130)">
+                        <circle cx="0" cy="0" r="16" fill="rgba(15, 76, 129, 0.1)"/>
+                        <path d="M0 -8L-5 -6V-2C-5 0 -2.5 4 0 6C2.5 4 5 0 5 -2V-6L0 -8Z" fill="none" stroke="#0F4C81" stroke-width="1.2"/>
+                        <path d="M-2 0L0 2L3 -2" stroke="#0F4C81" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                </g>
+
+                <!-- Left side labels -->
+                <g font-family="-apple-system, sans-serif" font-size="10" fill="#999">
+                    <text x="80" y="70">Acceptance</text>
+                    <text x="80" y="110">Service Description</text>
+                    <text x="80" y="150">Data Sharing</text>
+                    <text x="80" y="190">Acceptable Use</text>
+                    <text x="80" y="230">Liability</text>
+                </g>
+
+                <!-- Right side labels -->
+                <g font-family="-apple-system, sans-serif" font-size="10" fill="#999" text-anchor="end">
+                    <text x="720" y="110">Privacy Policy</text>
+                    <text x="720" y="150">Third-Party Content</text>
+                    <text x="720" y="190">Modifications</text>
+                    <text x="720" y="230">Governing Law</text>
+                </g>
+
+                <!-- Footer text -->
+                <g font-family="SF Mono, monospace" font-size="10" fill="#999">
+                    <text x="400" y="375" text-anchor="middle">TRANSPARENT TERMS · FAIR USE POLICY · GOVERNING LAW SPECIFIED</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Acceptance of Terms Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Acceptance of Terms</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    By accessing or using a Miropad link, you agree to be bound by these Terms of Service and our Privacy Policy.
+                    If you do not agree to these terms, do not use Miropad services.
+                </p>
+            </div>
+        </div>
+
+        <!-- Service Description Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Service Description</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Miropad is a neutral link delivery utility that operates as part of the Miropad system, powered by your AI platform.
+                    Miropad facilitates secure redirects from miropad.com URLs to destination content, primarily lead magnets and
+                    resources hosted on your AI platform and partner platforms.
+                </p>
+            </div>
+        </div>
+
+        <!-- Data Sharing Agreement Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Data Sharing Agreement</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    By using Miropad, you explicitly acknowledge and consent to the following data sharing practices:
+                </p>
+
+                <div class="terms-subsection">
+                    <h3>Sender Access</h3>
+                    <p>The person or organization who sent you the Miropad link ("the Sender") will receive information about your interaction with the link, including but not limited to:</p>
+                    <ul class="feature-list">
+                        <li>Click timestamp and engagement data</li>
+                        <li>Device and browser information</li>
+                        <li>IP address and approximate location</li>
+                        <li>Any information you provide through forms or subsequent interactions</li>
+                    </ul>
+                </div>
+
+                <div class="terms-subsection">
+                    <h3>Partner Network Sharing</h3>
+                    <p>Your interaction data may be shared with and processed by our partner companies to enable integrated service delivery. By using Miropad, you consent to data sharing with:</p>
+                    <ul class="partner-list">
+                        <li>your AI platform (primary platform and infrastructure provider)</li>
+                        <li>Prognostic.ai</li>
+                        <li>Punctual.ai</li>
+                        <li>Enclose.ai</li>
+                        <li>Enclosed.ai</li>
+                        <li>CompanyAgent.ai</li>
+                        <li>ePub.ai</li>
+                        <li>Psych.ai</li>
+                    </ul>
+                    <p style="margin-top: 16px;">
+                        These partners may use your data in accordance with their own privacy policies to provide, improve, and
+                        support integrated services across the network.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acceptable Use Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Acceptable Use</h2>
+            </div>
+            <div class="section-body">
+                <p>You agree to use Miropad only for lawful purposes. You may not:</p>
+                <ul class="feature-list">
+                    <li>Attempt to circumvent, disable, or interfere with Miropad infrastructure</li>
+                    <li>Use automated systems to access Miropad links at scale without authorization</li>
+                    <li>Reverse engineer or attempt to extract source code from Miropad services</li>
+                    <li>Violate any applicable laws or regulations in connection with your use of Miropad</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Warranties and Liability Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Disclaimer of Warranties</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Miropad is provided "as is" and "as available" without warranties of any kind, either express or implied.
+                    We do not guarantee uninterrupted access, error-free operation, or that Miropad will meet your specific requirements.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Limitation of Liability</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    To the maximum extent permitted by law, Miropad, your AI platform, and our partner companies shall not be liable
+                    for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability
+                    to use Miropad services.
+                </p>
+            </div>
+        </div>
+
+        <!-- Third-Party Content Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Third-Party Content</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Miropad links redirect to third-party content. We are not responsible for the accuracy, legality, or
+                    appropriateness of content you access through Miropad redirects. Your use of destination content is subject
+                    to the terms and policies of those destinations.
+                </p>
+            </div>
+        </div>
+
+        <!-- Modifications Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Modifications to Terms</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    We reserve the right to modify these Terms of Service at any time. Changes will be posted on this page
+                    with an updated "Last updated" date. Continued use of Miropad after changes constitutes acceptance of the
+                    updated terms.
+                </p>
+            </div>
+        </div>
+
+        <!-- Governing Law Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Governing Law</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    These Terms of Service are governed by and construed in accordance with applicable laws, without regard to
+                    conflict of law principles. Any disputes shall be resolved in accordance with the dispute resolution procedures
+                    of your AI platform.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="content-section" style="border-bottom: none;">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Questions about these Terms of Service should be directed to <a href="mailto:legal@miropad.com">legal@miropad.com</a>.
+                </p>
+            </div>
+        </div>
+
+        <footer class="ive-footer">
+            <div class="footer-wrapper">
+                <nav class="footer-main-nav">
+                    <a href="/about" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="7" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <a href="/security" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 4V9C4 13 6.5 16.5 10 18.5C13.5 16.5 16 13 16 9V4L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7.5 10L9 11.5L12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Security</span>
+                    </a>
+                    <a href="/docs" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Docs</span>
+                    </a>
+                    <a href="/support" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 13C7 13 8.5 15 10 15C11.5 15 13 13 13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7.5" cy="8.5" r="0.5" fill="currentColor"/>
+                            <circle cx="12.5" cy="8.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>Support</span>
+                    </a>
+                </nav>
+                <div class="footer-meta">
+                    <p class="footer-copyright">© <span id="current-year">2025</span> your AI platform</p>
+                    <p class="footer-tagline">A Miropad System</p>
+                    <nav class="footer-legal-nav">
+                        <a href="/status">Status</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+    // Upload Modal
+    (function() {
+        const modal = document.getElementById('uploadModal');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        uploadBtn.addEventListener('click', openModal);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
