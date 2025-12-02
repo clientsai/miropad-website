@@ -428,9 +428,11 @@
         });
     })();
 
-    // Typewriter Effect
+    // Typewriter Effect v2
     (function() {
         const typewriterEl = document.getElementById('typewriter');
+        if (!typewriterEl) return;
+
         const phrases = [
             'Share docs safely',
             'Share docs securely',
