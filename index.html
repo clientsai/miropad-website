@@ -405,6 +405,9 @@
         const modalClose = document.getElementById('modalClose');
         const modalOverlay = document.getElementById('modalOverlay');
 
+        // Exit if required elements don't exist
+        if (!modal || !modalClose || !modalOverlay) return;
+
         function openModal() {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -417,7 +420,9 @@
             modal.setAttribute('aria-hidden', 'true');
         }
 
-        uploadBtn.addEventListener('click', openModal);
+        if (uploadBtn) {
+            uploadBtn.addEventListener('click', openModal);
+        }
         modalClose.addEventListener('click', closeModal);
         modalOverlay.addEventListener('click', closeModal);
 

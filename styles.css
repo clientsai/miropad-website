@@ -2127,10 +2127,7 @@ footer {
 .typewriter {
     display: inline-block;
     min-width: 1px;
-    background: linear-gradient(180deg, #252525 0%, #2d2d2d 50%, #3d2e45 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #0F4C81;
 }
 
 .typewriter-cursor {
