@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="miropad-icon.svg">
-    <meta name="theme-color" content="#0F4C81">
+    <meta name="theme-color" content="#1D1D1F">
 </head>
 <body>
     <div class="container">
@@ -96,7 +96,7 @@
                         <!-- Gradient for subtle depth -->
                         <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#e5e7eb;stop-opacity:0.3" />
-                            <stop offset="50%" style="stop-color:#0F4C81;stop-opacity:0.15" />
+                            <stop offset="50%" style="stop-color:#1D1D1F;stop-opacity:0.15" />
                             <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:0.3" />
                         </linearGradient>
 
@@ -139,33 +139,33 @@
                     <g stroke-linecap="round">
                         <path d="M 64 60 Q 250 60, 380 140" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path1"/>
                         <path d="M 64 110 Q 250 110, 380 145" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path2"/>
-                        <path d="M 64 150 L 380 150" stroke="rgba(15, 76, 129, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path3"/>
+                        <path d="M 64 150 L 380 150" stroke="rgba(29, 29, 31, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path3"/>
                         <path d="M 64 190 Q 250 190, 380 155" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path4"/>
                         <path d="M 64 240 Q 250 240, 380 160" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path5"/>
                     </g>
 
                     <!-- Traveling dots on incoming paths (slower, more tasteful) -->
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" repeatCount="indefinite">
                             <mpath href="#path1"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="1s" repeatCount="indefinite">
                             <mpath href="#path2"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="2s" repeatCount="indefinite">
                             <mpath href="#path3"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="3s" repeatCount="indefinite">
                             <mpath href="#path4"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="4s" repeatCount="indefinite">
                             <mpath href="#path5"/>
                         </animateMotion>
@@ -174,15 +174,15 @@
                     <!-- Miropad central hub (routing nexus) with enhanced pulsing -->
                     <g filter="url(#softGlow)">
                         <!-- Outer ring with pulse -->
-                        <circle cx="400" cy="150" r="28" fill="none" stroke="rgba(15, 76, 129, 0.1)" stroke-width="12">
+                        <circle cx="400" cy="150" r="28" fill="none" stroke="rgba(29, 29, 31, 0.1)" stroke-width="12">
                             <animate attributeName="r" values="28;32;28" dur="2s" repeatCount="indefinite"/>
                         </circle>
                         <!-- Inner core with subtle fill pulse -->
-                        <circle cx="400" cy="150" r="18" fill="rgba(15, 76, 129, 0.08)" stroke="#0F4C81" stroke-width="2">
+                        <circle cx="400" cy="150" r="18" fill="rgba(29, 29, 31, 0.08)" stroke="#1D1D1F" stroke-width="2">
                             <animate attributeName="fill-opacity" values="0.08;0.15;0.08" dur="2s" repeatCount="indefinite"/>
                         </circle>
                         <!-- Central routing point with pulse -->
-                        <circle cx="400" cy="150" r="6" fill="#0F4C81">
+                        <circle cx="400" cy="150" r="6" fill="#1D1D1F">
                             <animate attributeName="r" values="6;7;6" dur="1s" repeatCount="indefinite"/>
                         </circle>
                     </g>
@@ -191,33 +191,33 @@
                     <g stroke-linecap="round">
                         <path d="M 420 140 Q 550 60, 736 60" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path6"/>
                         <path d="M 420 145 Q 550 110, 736 110" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path7"/>
-                        <path d="M 420 150 L 736 150" stroke="rgba(15, 76, 129, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path8"/>
+                        <path d="M 420 150 L 736 150" stroke="rgba(29, 29, 31, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path8"/>
                         <path d="M 420 155 Q 550 190, 736 190" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path9"/>
                         <path d="M 420 160 Q 550 240, 736 240" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path10"/>
                     </g>
 
                     <!-- Traveling dots on outgoing paths (slower, more tasteful) -->
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" repeatCount="indefinite">
                             <mpath href="#path6"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="1s" repeatCount="indefinite">
                             <mpath href="#path7"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="2s" repeatCount="indefinite">
                             <mpath href="#path8"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="3s" repeatCount="indefinite">
                             <mpath href="#path9"/>
                         </animateMotion>
                     </circle>
-                    <circle r="2.5" fill="#0F4C81" opacity="0.5">
+                    <circle r="2.5" fill="#1D1D1F" opacity="0.5">
                         <animateMotion dur="5s" begin="4s" repeatCount="indefinite">
                             <mpath href="#path10"/>
                         </animateMotion>
@@ -243,7 +243,7 @@
                     </g>
 
                     <!-- Additional pulse animation on center hub -->
-                    <circle cx="400" cy="150" r="18" fill="none" stroke="#0F4C81" stroke-width="1" opacity="0.3">
+                    <circle cx="400" cy="150" r="18" fill="none" stroke="#1D1D1F" stroke-width="1" opacity="0.3">
                         <animate attributeName="r" values="18;32;18" dur="3s" repeatCount="indefinite"/>
                         <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
                     </circle>

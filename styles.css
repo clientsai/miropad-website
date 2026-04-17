@@ -74,7 +74,7 @@ header {
 }
 
 .logo-lock {
-    color: #0F4C81;
+    color: #1D1D1F;
 }
 
 /* Status indicator - subtle green dot */
@@ -89,18 +89,18 @@ header {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #0F4C81;
+    background: #1D1D1F;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px rgba(15, 76, 129, 0.15);
+    box-shadow: 0 0 0 2px rgba(29, 29, 31, 0.15);
     animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 0 2px rgba(15, 76, 129, 0.15);
+        box-shadow: 0 0 0 2px rgba(29, 29, 31, 0.15);
     }
     50% {
-        box-shadow: 0 0 0 4px rgba(15, 76, 129, 0.1);
+        box-shadow: 0 0 0 4px rgba(29, 29, 31, 0.1);
     }
 }
 
@@ -151,7 +151,7 @@ main {
 }
 
 .security-badge svg {
-    color: #0F4C81;
+    color: #1D1D1F;
     opacity: 0.9;
 }
 
@@ -229,8 +229,8 @@ h1 {
     font-weight: 500;
     margin-top: 24px;
     padding: 8px 16px;
-    background: #F0F7FF;
-    border: 1px solid #DBEAFE;
+    background: #F5F5F7;
+    border: 1px solid #D2D2D7;
     border-radius: 20px;
     width: fit-content;
     letter-spacing: -0.006em;
@@ -456,7 +456,7 @@ footer {
     left: 0;
     right: 0;
     height: 2px;
-    background: #0F4C81;
+    background: #1D1D1F;
 }
 
 /* Status page components */
@@ -468,8 +468,8 @@ footer {
 }
 
 .status-card-operational {
-    background: linear-gradient(to bottom, rgba(15, 76, 129, 0.03), rgba(15, 76, 129, 0.01));
-    border-color: rgba(15, 76, 129, 0.2);
+    background: linear-gradient(to bottom, rgba(29, 29, 31, 0.03), rgba(29, 29, 31, 0.01));
+    border-color: rgba(29, 29, 31, 0.2);
 }
 
 .status-card-header {
@@ -534,7 +534,7 @@ footer {
 }
 
 .service-indicator.operational {
-    color: #0F4C81;
+    color: #1D1D1F;
 }
 
 .service-indicator .status-dot {
@@ -579,8 +579,8 @@ footer {
     display: flex;
     gap: 12px;
     padding: 16px;
-    background: rgba(15, 76, 129, 0.05);
-    border: 1px solid rgba(15, 76, 129, 0.15);
+    background: rgba(29, 29, 31, 0.05);
+    border: 1px solid rgba(29, 29, 31, 0.15);
     border-radius: 6px;
     margin-bottom: 32px;
     font-size: 14px;
@@ -589,7 +589,7 @@ footer {
 }
 
 .info-box svg {
-    color: #0F4C81;
+    color: #1D1D1F;
 }
 
 .legal-page h1 {
@@ -886,7 +886,7 @@ footer {
 
 .security-feature:hover {
     background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(15, 76, 129, 0.2);
+    border-color: rgba(29, 29, 31, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -898,7 +898,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(15, 76, 129, 0.08);
+    background: rgba(29, 29, 31, 0.08);
     border-radius: 6px;
 }
 
@@ -932,7 +932,7 @@ footer {
 
 .feature-list li::before {
     content: "•";
-    color: #0F4C81;
+    color: #1D1D1F;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -957,7 +957,7 @@ footer {
 
 .compliance-card:hover {
     background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(15, 76, 129, 0.2);
+    border-color: rgba(29, 29, 31, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -965,8 +965,8 @@ footer {
 .compliance-badge {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba(15, 76, 129, 0.1);
-    color: #0F4C81;
+    background: rgba(29, 29, 31, 0.1);
+    color: #1D1D1F;
     border-radius: 4px;
     font-size: 11px;
     font-weight: 600;
@@ -1008,15 +1008,15 @@ footer {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: rgba(15, 76, 129, 0.08);
-    border: 2px solid rgba(15, 76, 129, 0.2);
+    background: rgba(29, 29, 31, 0.08);
+    border: 2px solid rgba(29, 29, 31, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
     font-weight: 600;
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Courier New', monospace;
-    color: #0F4C81;
+    color: #1D1D1F;
 }
 
 .timeline-content {
@@ -1085,9 +1085,9 @@ footer {
     gap: 20px;
     align-items: flex-start;
     padding: 32px;
-    background: rgba(15, 76, 129, 0.05);
+    background: rgba(29, 29, 31, 0.05);
     border-radius: 8px;
-    border: 1px solid rgba(15, 76, 129, 0.2);
+    border: 1px solid rgba(29, 29, 31, 0.2);
     margin-bottom: 48px;
 }
 
@@ -1220,7 +1220,7 @@ footer {
 
 .partner-list li::before {
     content: "→";
-    color: #0F4C81;
+    color: #1D1D1F;
     position: absolute;
     left: 0;
     font-weight: 600;
@@ -1309,7 +1309,7 @@ footer {
 .how-it-works {
     margin: 64px 0 32px 0;
     padding: 48px 32px;
-    background: linear-gradient(to bottom, rgba(15, 76, 129, 0.02) 0%, rgba(15, 76, 129, 0.04) 100%);
+    background: linear-gradient(to bottom, rgba(29, 29, 31, 0.02) 0%, rgba(29, 29, 31, 0.04) 100%);
     border-radius: 12px;
 }
 
@@ -1341,8 +1341,8 @@ footer {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(15, 76, 129, 0.1);
-    color: #0F4C81;
+    background: rgba(29, 29, 31, 0.1);
+    color: #1D1D1F;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1392,22 +1392,22 @@ footer {
 .cta-button {
     display: inline-block;
     padding: 16px 36px;
-    background: #0F4C81;
+    background: #1D1D1F;
     color: white;
     text-decoration: none;
     border-radius: 10px;
     font-weight: 600;
     font-size: 16px;
     letter-spacing: -0.011em;
-    box-shadow: 0 1px 3px rgba(15, 76, 129, 0.12), 0 1px 2px rgba(15, 76, 129, 0.08);
+    box-shadow: 0 1px 3px rgba(29, 29, 31, 0.12), 0 1px 2px rgba(29, 29, 31, 0.08);
     margin-top: 24px;
     transition: all 0.2s ease;
 }
 
 .cta-button:hover {
-    background: #0D3F6B;
+    background: #000000;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(15, 76, 129, 0.3);
+    box-shadow: 0 4px 12px rgba(29, 29, 31, 0.3);
 }
 
 /* Mobile Responsive for New Sections */
@@ -1558,7 +1558,7 @@ footer {
 }
 
 .contact-card:hover {
-    border-color: rgba(15, 76, 129, 0.3);
+    border-color: rgba(29, 29, 31, 0.3);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
 }
@@ -1570,9 +1570,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(15, 76, 129, 0.08);
+    background: rgba(29, 29, 31, 0.08);
     border-radius: 10px;
-    color: #0F4C81;
+    color: #1D1D1F;
 }
 
 .contact-info {
@@ -1778,7 +1778,7 @@ footer {
     left: 0;
     right: 0;
     height: 1px;
-    background: #0F4C81;
+    background: #1D1D1F;
     transform: scaleX(0);
     transition: transform 0.2s ease;
 }
@@ -1966,7 +1966,7 @@ footer {
     display: inline-block;
     width: 100%;
     padding: 14px 24px;
-    background: #0F4C81;
+    background: #1D1D1F;
     color: #ffffff;
     text-align: center;
     border-radius: 10px;
@@ -1978,9 +1978,9 @@ footer {
 }
 
 .modal-cta:hover {
-    background: #0D3F6B;
+    background: #000000;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(15, 76, 129, 0.3);
+    box-shadow: 0 4px 12px rgba(29, 29, 31, 0.3);
 }
 
 .modal-fine-print {
@@ -2033,7 +2033,7 @@ footer {
 }
 
 .service-notice a {
-    color: #0F4C81;
+    color: #1D1D1F;
     text-decoration: none;
     font-weight: 500;
 }
@@ -2127,15 +2127,18 @@ footer {
 .typewriter {
     display: inline-block;
     min-width: 1px;
-    color: #0F4C81;
+    background: linear-gradient(180deg, #252525 0%, #2d2d2d 50%, #3d2e45 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .typewriter-cursor {
     display: inline-block;
     animation: blink 1s step-end infinite;
     font-weight: 300;
-    color: #0F4C81;
-    -webkit-text-fill-color: #0F4C81;
+    color: #1D1D1F;
+    -webkit-text-fill-color: #1D1D1F;
     margin-left: 2px;
     background: none;
 }
@@ -2218,11 +2221,13 @@ footer {
     border: 1px solid #E5E7EB;
     border-radius: 12px;
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .industry-card:hover {
-    border-color: rgba(15, 76, 129, 0.2);
+    border-color: rgba(29, 29, 31, 0.2);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
 }
 
 .industry-card h3 {
@@ -2236,7 +2241,113 @@ footer {
     font-size: 16px;
     color: #6B7280;
     line-height: 1.6;
-    margin-bottom: 0;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.industry-card .learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1D1D1F;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+
+.industry-card:hover .learn-more {
+    gap: 10px;
+}
+
+.industry-card .learn-more svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Industry Modal */
+.industry-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.industry-modal.active {
+    display: flex;
+}
+
+.industry-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.industry-modal-content {
+    position: relative;
+    max-width: 560px;
+    width: 90%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 48px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    z-index: 10001;
+}
+
+.industry-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #9CA3AF;
+    transition: color 0.2s ease;
+}
+
+.industry-modal-close:hover {
+    color: #6B7280;
+}
+
+.industry-modal-content h2 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.industry-modal-content p {
+    font-size: 16px;
+    color: #6B7280;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.industry-modal-cta {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1D1D1F;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(29, 29, 31, 0.3);
+    transition: border-color 0.2s ease;
+}
+
+.industry-modal-cta:hover {
+    border-color: #1D1D1F;
 }
 
 @media (max-width: 768px) {
@@ -2261,5 +2372,9 @@ footer {
     .industries-section h2 {
         font-size: 32px;
         margin-bottom: 40px;
+    }
+
+    .industry-modal-content {
+        padding: 40px 32px;
     }
 }

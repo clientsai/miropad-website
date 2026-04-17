@@ -62,12 +62,12 @@
             <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-label="Data flow and protection visualization">
                 <defs>
                     <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:0.3" />
-                        <stop offset="100%" style="stop-color:#0F4C81;stop-opacity:0.1" />
+                        <stop offset="0%" style="stop-color:#1D1D1F;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#1D1D1F;stop-opacity:0.1" />
                     </linearGradient>
 
                     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                        <polygon points="0 0, 10 3, 0 6" fill="#0F4C81" opacity="0.4"/>
+                        <polygon points="0 0, 10 3, 0 6" fill="#1D1D1F" opacity="0.4"/>
                     </marker>
 
                     <filter id="nodeGlow">
@@ -86,7 +86,7 @@
                 <rect width="800" height="400" fill="url(#privacyGrid)"/>
 
                 <!-- Data flow paths -->
-                <g opacity="0.3" stroke="#0F4C81" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+                <g opacity="0.3" stroke="#1D1D1F" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
                     <!-- Recipient to Miropad -->
                     <path d="M 120 200 L 280 200">
                         <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" repeatCount="indefinite"/>
@@ -112,13 +112,13 @@
 
                 <!-- Miropad (center) -->
                 <g transform="translate(350, 200)">
-                    <circle cx="0" cy="0" r="48" fill="rgba(15, 76, 129, 0.08)"/>
-                    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.95)" stroke="#0F4C81" stroke-width="2.5"/>
+                    <circle cx="0" cy="0" r="48" fill="rgba(29, 29, 31, 0.08)"/>
+                    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.95)" stroke="#1D1D1F" stroke-width="2.5"/>
                     <!-- Shield icon -->
-                    <path d="M0 -16L-8 -12V-4C-8 0 -4 6 0 8C4 6 8 0 8 -4V-12L0 -16Z" fill="none" stroke="#0F4C81" stroke-width="1.5"/>
-                    <path d="M-4 -2L-1 1L4 -5" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M0 -16L-8 -12V-4C-8 0 -4 6 0 8C4 6 8 0 8 -4V-12L0 -16Z" fill="none" stroke="#1D1D1F" stroke-width="1.5"/>
+                    <path d="M-4 -2L-1 1L4 -5" stroke="#1D1D1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <text x="0" y="60" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Miropad</text>
-                    <text x="0" y="75" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#0F4C81">PROCESSES</text>
+                    <text x="0" y="75" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#1D1D1F">PROCESSES</text>
                 </g>
 
                 <!-- Sender (top right) -->
@@ -134,28 +134,28 @@
                 <g transform="translate(630, 260)">
                     <rect x="-40" y="-30" width="80" height="60" rx="6" fill="rgba(255,255,255,0.9)" stroke="rgba(0,0,0,0.1)" stroke-width="1.5"/>
                     <!-- 8 small dots representing partners -->
-                    <circle cx="-20" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
-                    <circle cx="-6" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
-                    <circle cx="8" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
-                    <circle cx="22" cy="-12" r="3" fill="#0F4C81" opacity="0.6"/>
-                    <circle cx="-20" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
-                    <circle cx="-6" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
-                    <circle cx="8" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
-                    <circle cx="22" cy="4" r="3" fill="#0F4C81" opacity="0.6"/>
+                    <circle cx="-20" cy="-12" r="3" fill="#1D1D1F" opacity="0.6"/>
+                    <circle cx="-6" cy="-12" r="3" fill="#1D1D1F" opacity="0.6"/>
+                    <circle cx="8" cy="-12" r="3" fill="#1D1D1F" opacity="0.6"/>
+                    <circle cx="22" cy="-12" r="3" fill="#1D1D1F" opacity="0.6"/>
+                    <circle cx="-20" cy="4" r="3" fill="#1D1D1F" opacity="0.6"/>
+                    <circle cx="-6" cy="4" r="3" fill="#1D1D1F" opacity="0.6"/>
+                    <circle cx="8" cy="4" r="3" fill="#1D1D1F" opacity="0.6"/>
+                    <circle cx="22" cy="4" r="3" fill="#1D1D1F" opacity="0.6"/>
                     <text x="0" y="50" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#666">Partner Network</text>
                     <text x="0" y="65" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#999">8 PARTNERS</text>
                 </g>
 
                 <!-- Encryption indicators -->
                 <g transform="translate(200, 180)">
-                    <rect x="0" y="0" width="20" height="14" rx="2" fill="none" stroke="#0F4C81" stroke-width="1" opacity="0.5"/>
-                    <circle cx="10" cy="7" r="2" fill="#0F4C81" opacity="0.5"/>
+                    <rect x="0" y="0" width="20" height="14" rx="2" fill="none" stroke="#1D1D1F" stroke-width="1" opacity="0.5"/>
+                    <circle cx="10" cy="7" r="2" fill="#1D1D1F" opacity="0.5"/>
                     <text x="10" y="28" text-anchor="middle" font-family="SF Mono, monospace" font-size="8" fill="#999">TLS 1.3</text>
                 </g>
 
                 <g transform="translate(480, 180)">
-                    <rect x="0" y="0" width="20" height="14" rx="2" fill="none" stroke="#0F4C81" stroke-width="1" opacity="0.5"/>
-                    <circle cx="10" cy="7" r="2" fill="#0F4C81" opacity="0.5"/>
+                    <rect x="0" y="0" width="20" height="14" rx="2" fill="none" stroke="#1D1D1F" stroke-width="1" opacity="0.5"/>
+                    <circle cx="10" cy="7" r="2" fill="#1D1D1F" opacity="0.5"/>
                     <text x="10" y="28" text-anchor="middle" font-family="SF Mono, monospace" font-size="8" fill="#999">ENCRYPTED</text>
                 </g>
 

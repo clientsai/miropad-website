@@ -9,8 +9,8 @@
       <stop offset="100%" style="stop-color:#e9ecef" />
     </linearGradient>
     <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0F4C81" />
-      <stop offset="100%" style="stop-color:#0D3F6B" />
+      <stop offset="0%" style="stop-color:#1D1D1F" />
+      <stop offset="100%" style="stop-color:#000000" />
     </linearGradient>
   </defs>
 
@@ -28,7 +28,7 @@
   <rect x="6" y="4" width="40" height="48" rx="2.5" fill="url(#docLayer1)" stroke="#adb5bd" stroke-width="1.5"/>
 
   <!-- Document lines (representing resource content) -->
-  <line x1="12" y1="14" x2="40" y2="14" stroke="#0F4C81" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="12" y1="14" x2="40" y2="14" stroke="#1D1D1F" stroke-width="2.5" stroke-linecap="round"/>
   <line x1="12" y1="22" x2="34" y2="22" stroke="#ced4da" stroke-width="1.5" stroke-linecap="round"/>
   <line x1="12" y1="29" x2="37" y2="29" stroke="#ced4da" stroke-width="1.5" stroke-linecap="round"/>
   <line x1="12" y1="36" x2="30" y2="36" stroke="#ced4da" stroke-width="1.5" stroke-linecap="round"/>
