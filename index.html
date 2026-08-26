@@ -89,7 +89,7 @@
                 <span>The document layer for autonomous AI agents</span>
             </div>
 
-            <h1><span id="typewriter" class="typewriter"></span><span class="typewriter-cursor">|</span></h1>
+            <h1><span class="h1-static">Share docs</span> <span id="typewriter" class="typewriter"></span><span class="typewriter-cursor">|</span></h1>
             <p class="description">
                 View-only web platform for secure document sharing. Access professional reports, audits, and recommendations through read-only links.
             </p>
@@ -450,16 +450,15 @@
         if (!typewriterEl) return;
 
         const phrases = [
-            'Share docs safely',
-            'Share docs securely',
-            'Share docs worry-free',
-            'Share docs without risk',
-            'Share docs confidently',
-            'Share docs read-only',
-            'Share docs view-only',
-            'Share docs no edits',
-            'Share docs protected',
-            'Share docs locked'
+            'safely',
+            'securely',
+            'worry-free',
+            'without risk',
+            'confidently',
+            'read-only',
+            'view-only',
+            'with no edits',
+            'protected'
         ];
 
         let phraseIndex = 0;
@@ -528,6 +527,15 @@
       ],
       "securityDescription": "Secure read-only access with GDPR compliance"
     }
+    </script>
+    <script>
+        (function () {
+            var onScroll = function () {
+                document.body.classList.toggle('scrolled', window.scrollY > 8);
+            };
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
     </script>
 </body>
 </html>

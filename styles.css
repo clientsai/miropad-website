@@ -160,12 +160,12 @@ main {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 60px;
     font-weight: 600;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.025em;
     color: #111827;
-    margin-bottom: 28px;
-    line-height: 1.08;
+    margin-bottom: 24px;
+    line-height: 1.25;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
 }
 
@@ -2701,3 +2701,34 @@ footer {
     .footer-wrapper { padding: 44px 24px 32px; }
     .footer-base { flex-direction: column; align-items: flex-start; }
 }
+
+
+/* ── Detail parity with the siblings (measured, not guessed) ─────────────────
+   enclosed.ai renders its h1 at 60px / -1.5px tracking / 1.25 line-height and
+   leaves the header rule off until the page scrolls. Miropad was 72px at -2.88px
+   with a permanent hairline, which is why the two heroes never sat at the same
+   weight even though everything else matched. */
+
+/* The family's two-tone heading: the fixed half in ink, the moving half in the
+   accent. Keeps the typewriter, which is the point of this hero. */
+.typewriter {
+    background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typewriter-cursor {
+    color: #7B5BA6;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 40px; letter-spacing: -0.02em; }
+}
+
+.h1-static { color: #111827; }
+
+/* Header keeps its rule only once the page moves, as the siblings do. */
+header { border-bottom-color: transparent; transition: border-color 0.2s ease; }
+body.scrolled header { border-bottom-color: rgba(0, 0, 0, 0.06); }
