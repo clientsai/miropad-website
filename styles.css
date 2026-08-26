@@ -2378,3 +2378,95 @@ footer {
         padding: 40px 32px;
     }
 }
+
+
+/* ── Clients.ai ecosystem alignment (2026-08-26) ───────────────────────────────
+   epub.ai, punctual.ai and enclosed.ai all open the same way: a centred column,
+   a purple category pill, one heading, one line of explanation, one button. This
+   page was left-aligned, grey, and had no way to act on it. Same bones, same
+   restraint — the network diagram stays, because it is the best thing here. */
+
+.hero-centered {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-centered .description,
+.hero-centered .subdescription {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-centered .subdescription {
+    margin-bottom: 32px;
+}
+
+/* align-items:center shrink-wraps flex children, which collapsed the network
+   diagram to 48px wide and zero high. These two need the full column. */
+.hero-centered .infrastructure-diagram,
+.hero-centered .trust-stats {
+    align-self: stretch;
+    width: 100%;
+}
+
+/* The category pill — the one place the family shows its colour. */
+.invite-only.layer-pill {
+    margin-top: 0;
+    margin-bottom: 28px;
+    color: #7B5BA6;
+    background: rgba(123, 91, 166, 0.06);
+    border-color: rgba(0, 0, 0, 0.08);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.invite-only.layer-pill svg { color: #7B5BA6; }
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);
+    box-shadow: 0 8px 22px -13px rgba(61, 32, 102, 0.72);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px -13px rgba(61, 32, 102, 0.8);
+}
+
+.hero-cta-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #9CA3AF;
+    letter-spacing: -0.008em;
+}
+
+/* The header carries the same provenance chip as its siblings. */
+.powered-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: #6B7280;
+    background: rgba(249, 250, 251, 0.8);
+    border: 1px solid #E5E7EB;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .powered-chip { display: none; }
+}

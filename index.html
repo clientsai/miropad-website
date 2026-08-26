@@ -25,7 +25,7 @@
     <meta name="keywords" content="view-only documents, read-only resources, document sharing, secure viewing, content access">
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="miropad-icon.svg">
     <meta name="theme-color" content="#1D1D1F">
 </head>
@@ -37,6 +37,7 @@
                     <a href="/" class="logo-link">
                         <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
                     </a>
+                    <span class="powered-chip">Powered by Clients.ai</span>
                 </div>
                 <div class="header-right">
                     <a href="/docs" class="header-action-btn">
@@ -74,12 +75,13 @@
         </div>
 
         <main>
+            <div class="hero-centered">
             <div class="security-badge">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 1L3 3V7C3 10.5 5.5 13.5 8 15C10.5 13.5 13 10.5 13 7V3L8 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                     <path d="M6 8L7.5 9.5L10.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>For Clients.ai users only</span>
+                <span>The document layer for autonomous AI agents</span>
             </div>
 
             <h1><span id="typewriter" class="typewriter"></span><span class="typewriter-cursor">|</span></h1>
@@ -90,13 +92,21 @@
                 Exclusive to Clients.ai members for secure document sharing.
             </p>
 
+            <a href="https://app.clients.ai/signup" class="hero-cta">
+                Start 18-day free trial
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <p class="hero-cta-note">Included with every Clients.ai plan</p>
+
             <div class="infrastructure-diagram">
                 <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-label="Miropad network infrastructure">
                     <defs>
                         <!-- Gradient for subtle depth -->
                         <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style="stop-color:#e5e7eb;stop-opacity:0.3" />
-                            <stop offset="50%" style="stop-color:#1D1D1F;stop-opacity:0.15" />
+                            <stop offset="50%" style="stop-color:#7B5BA6;stop-opacity:0.35" />
                             <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:0.3" />
                         </linearGradient>
 
@@ -118,19 +128,19 @@
 
                     <!-- Source nodes (left side) - 5 connection points with pulsing -->
                     <g>
-                        <circle cx="60" cy="60" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="60" cy="60" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="60" cy="110" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="60" cy="110" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.4s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="60" cy="150" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="60" cy="150" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.8s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="60" cy="190" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="60" cy="190" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.2s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="60" cy="240" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="60" cy="240" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.6s" repeatCount="indefinite"/>
                         </circle>
                     </g>
@@ -139,7 +149,7 @@
                     <g stroke-linecap="round">
                         <path d="M 64 60 Q 250 60, 380 140" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path1"/>
                         <path d="M 64 110 Q 250 110, 380 145" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path2"/>
-                        <path d="M 64 150 L 380 150" stroke="rgba(29, 29, 31, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path3"/>
+                        <path d="M 64 150 L 380 150" stroke="rgba(123, 91, 166, 0.30)" stroke-width="2" fill="none" opacity="0.8" id="path3"/>
                         <path d="M 64 190 Q 250 190, 380 155" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path4"/>
                         <path d="M 64 240 Q 250 240, 380 160" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path5"/>
                     </g>
@@ -174,7 +184,7 @@
                     <!-- Miropad central hub (routing nexus) with enhanced pulsing -->
                     <g filter="url(#softGlow)">
                         <!-- Outer ring with pulse -->
-                        <circle cx="400" cy="150" r="28" fill="none" stroke="rgba(29, 29, 31, 0.1)" stroke-width="12">
+                        <circle cx="400" cy="150" r="28" fill="none" stroke="rgba(123, 91, 166, 0.18)" stroke-width="12">
                             <animate attributeName="r" values="28;32;28" dur="2s" repeatCount="indefinite"/>
                         </circle>
                         <!-- Inner core with subtle fill pulse -->
@@ -191,7 +201,7 @@
                     <g stroke-linecap="round">
                         <path d="M 420 140 Q 550 60, 736 60" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path6"/>
                         <path d="M 420 145 Q 550 110, 736 110" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path7"/>
-                        <path d="M 420 150 L 736 150" stroke="rgba(29, 29, 31, 0.15)" stroke-width="2" fill="none" opacity="0.8" id="path8"/>
+                        <path d="M 420 150 L 736 150" stroke="rgba(123, 91, 166, 0.30)" stroke-width="2" fill="none" opacity="0.8" id="path8"/>
                         <path d="M 420 155 Q 550 190, 736 190" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path9"/>
                         <path d="M 420 160 Q 550 240, 736 240" stroke="url(#pathGradient)" stroke-width="1.5" fill="none" opacity="0.6" id="path10"/>
                     </g>
@@ -225,19 +235,19 @@
 
                     <!-- Destination nodes (right side) - 5 delivery points with pulsing -->
                     <g>
-                        <circle cx="740" cy="60" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="740" cy="60" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.2s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="740" cy="110" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="740" cy="110" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="0.6s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="740" cy="150" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="740" cy="150" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="740" cy="190" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="740" cy="190" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.4s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="740" cy="240" r="4" fill="#9ca3af" opacity="0.4">
+                        <circle cx="740" cy="240" r="4" fill="#7B5BA6" opacity="0.4">
                             <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" begin="1.8s" repeatCount="indefinite"/>
                         </circle>
                     </g>
@@ -249,7 +259,7 @@
                     </circle>
 
                     <!-- Enhanced labels with clearer service description -->
-                    <g font-family="SF Mono, Monaco, Inconsolata, Courier New, monospace" font-size="10" fill="#9ca3af">
+                    <g font-family="SF Mono, Monaco, Inconsolata, Courier New, monospace" font-size="10" fill="#7B5BA6">
                         <text x="400" y="95" text-anchor="middle" opacity="0.6">MIROPAD VIEW-ONLY INFRASTRUCTURE</text>
                         <text x="400" y="215" text-anchor="middle" opacity="0.5">READ-ONLY ACCESS · 99.9% UPTIME</text>
                     </g>
@@ -269,6 +279,7 @@
                     <div class="stat-value">99.9%</div>
                     <div class="stat-label">Uptime</div>
                 </div>
+            </div>
             </div>
 
             <div class="dark-feature-section">
