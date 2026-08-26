@@ -43,20 +43,6 @@
         </header>
 
         <!-- View Resource Modal -->
-        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-            <div class="modal-overlay" id="modalOverlay"></div>
-            <div class="modal-content">
-                <button class="modal-close" id="modalClose" aria-label="Close">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </a>
-                <h2 id="modalTitle">Powered by Clients.ai</h2>
-                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
-                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
-                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
-            </div>
-        </div>
 
         <div class="page-hero">
             <h1>Pricing</h1>
@@ -66,12 +52,12 @@
         <div style="max-width: 1200px; margin: 56px auto 0; padding: 0 24px;">
             <div style="text-align:center;margin-bottom:40px;">
                 <p style="font-size:13px;font-weight:600;color:#111827;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 16px;">Clients.ai Users Only</p>
-                <p style="font-size:18px;color:#4b5563;line-height:1.7;max-width:720px;margin:0 auto;">
+                <p style="font-size:18px;color:#4B5563;line-height:1.7;max-width:720px;margin:0 auto;">
                     Miropad is not sold separately. It is the surface your Clients.ai agents publish to when
                     they produce a report, an audit, or a set of recommendations for someone — so it comes
                     with every plan, at no additional cost, for as many documents as they create.
                 </p>
-                <p style="font-size:16px;color:#999;line-height:1.7;max-width:720px;margin:16px auto 0;">
+                <p style="font-size:16px;color:#9CA3AF;line-height:1.7;max-width:720px;margin:16px auto 0;">
                     Eighteen days free. Cancel with one click and you are never billed.
                 </p>
             </div>
@@ -177,37 +163,6 @@
         </footer>
     </div>
     <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-    <script>
-    // Upload Modal
-    (function() {
-        const modal = document.getElementById('uploadModal');
-        const uploadBtn = document.getElementById('uploadBtn');
-        const modalClose = document.getElementById('modalClose');
-        const modalOverlay = document.getElementById('modalOverlay');
-
-        function openModal() {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            modal.setAttribute('aria-hidden', 'false');
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-            modal.setAttribute('aria-hidden', 'true');
-        }
-
-        uploadBtn.addEventListener('click', openModal);
-        modalClose.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', closeModal);
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
-    })();
-    </script>
 
     <script>
         (function () {
