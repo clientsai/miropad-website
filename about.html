@@ -41,6 +41,118 @@
                 </div>
             </div>
         </header>
+
+
+        <div class="page-hero">
+            <h1>About Miropad</h1>
+            <p class="hero-subtitle">View-only web surface for AI-generated content resources</p>
+        </div>
+
+        <!-- Section 1: What We Do (Single Column) -->
+        <div style="max-width: 1200px; margin: 64px auto; padding: 0 24px;">
+            <!-- Header Section -->
+            <div style="text-align: center; margin-bottom: 48px;">
+                <div style="font-family: -apple-system, sans-serif; font-size: 13px; font-weight: 600; color: #7B5BA6; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;">What We Do</div>
+                <h2 style="font-family: -apple-system, sans-serif; font-size: 42px; font-weight: 700; color: #111827; margin-bottom: 24px; line-height: 1.15; letter-spacing: -0.02em;">View AI-Generated Resources</h2>
+                <p style="font-family: -apple-system, sans-serif; font-size: 18px; color: #4B5563; line-height: 1.7; max-width: 700px; margin: 0 auto;">
+                    Miropad displays AI-generated marketing documents through clean, trustworthy links. Access professional reports, audits, proposals, and strategy documents created by upstream AI systems.
+                </p>
+                <p style="font-family: -apple-system, sans-serif; font-size: 16px; color: #9CA3AF; line-height: 1.7; max-width: 700px; margin: 16px auto 0;">
+                    View-only access ensures content integrity. No editing, no modification—just clean presentation of AI-generated marketing materials.
+                </p>
+            </div>
+
+            <!-- SVG Diagram -->
+            <div style="margin: 0 auto; max-width: 600px;">
+                <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#111827;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#111827;stop-opacity:0.2" />
+                            </linearGradient>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#111827" opacity="0.6"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Background -->
+                        <rect width="500" height="350" fill="rgba(249, 250, 251, 0.5)" rx="8"/>
+
+                        <!-- Sender Node -->
+                        <g>
+                            <circle cx="80" cy="175" r="40" fill="rgba(255,255,255,0.95)" stroke="#111827" stroke-width="2"/>
+                            <text x="80" y="172" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#111827">Sender</text>
+                            <text x="80" y="187" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#6B7280">CREATE</text>
+                        </g>
+
+                        <!-- Miropad Node (Center) -->
+                        <g>
+                            <circle cx="250" cy="175" r="50" fill="url(#flowGradient)"/>
+                            <circle cx="250" cy="175" r="45" fill="rgba(255,255,255,0.98)" stroke="#111827" stroke-width="2.5"/>
+                            <text x="250" y="170" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="16" font-weight="700" fill="#111827">Miropad</text>
+                            <text x="250" y="186" text-anchor="middle" font-family="SF Mono, monospace" font-size="10" fill="#111827">VERIFY</text>
+                            <!-- Pulse animation -->
+                            <circle cx="250" cy="175" r="45" fill="none" stroke="#111827" stroke-width="1" opacity="0.4">
+                                <animate attributeName="r" values="45;58;45" dur="3s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+
+                        <!-- Recipient Node -->
+                        <g>
+                            <circle cx="420" cy="175" r="40" fill="rgba(255,255,255,0.95)" stroke="#111827" stroke-width="2"/>
+                            <text x="420" y="172" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#111827">Recipient</text>
+                            <text x="420" y="187" text-anchor="middle" font-family="SF Mono, monospace" font-size="9" fill="#6B7280">RECEIVE</text>
+                        </g>
+
+                        <!-- Flow arrows -->
+                        <path d="M 125 175 L 195 175" stroke="#111827" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" opacity="0.5"/>
+                        <path d="M 305 175 L 375 175" stroke="#111827" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" opacity="0.5"/>
+
+                        <!-- Flow labels -->
+                        <text x="160" y="160" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#6B7280" opacity="0.8">miropad.com/xyz</text>
+                        <text x="340" y="160" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#6B7280" opacity="0.8">301 redirect</text>
+
+                        <!-- Bottom labels -->
+                        <text x="250" y="310" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#9CA3AF">Secure · Verified · Transparent</text>
+                    </svg>
+            </div>
+        </div>
+
+        <!-- Section 2: How It Works (Reversed Layout) -->
+        <div style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%); padding: 64px 0;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <!-- Left: Content -->
+                    <div style="padding: 32px;">
+                        <div style="font-family: -apple-system, sans-serif; font-size: 12px; font-weight: 600; color: #7B5BA6; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">The Process</div>
+                        <h2 style="font-family: -apple-system, sans-serif; font-size: 32px; font-weight: 700; color: #111827; margin-bottom: 28px; line-height: 1.2;">How Miropad Works</h2>
+
+                        <div style="display: flex; flex-direction: column; gap: 24px;">
+                            <div style="display: flex; gap: 16px;">
+                                <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: center; font-family: SF Mono, monospace; font-size: 14px; font-weight: 700; color: #111827;">1</div>
+                                <div>
+                                    <h3 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #111827; margin-bottom: 6px;">AI Generation</h3>
+                                    <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #6B7280; line-height: 1.6;">Resources are generated automatically by AI systems</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 16px;">
+                                <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: center; font-family: SF Mono, monospace; font-size: 14px; font-weight: 700; color: #111827;">2</div>
+                                <div>
+                                    <h3 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #111827; margin-bottom: 6px;">Secure Access</h3>
+                                    <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #6B7280; line-height: 1.6;">Access resources through clean miropad.com links with read-only permissions</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 16px;">
+                                <div style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: center; font-family: SF Mono, monospace; font-size: 14px; font-weight: 700; color: #111827;">3</div>
+                                <div>
+                                    <h3 style="font-family: -apple-system, sans-serif; font-size: 16px; font-weight: 600; color: #111827; margin-bottom: 6px;">View-Only Display</h3>
+                                    <p style="font-family: -apple-system, sans-serif; font-size: 14px; color: #6B7280; line-height: 1.6;">Content displays in read-only format without editing capability</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Right: SVG -->
