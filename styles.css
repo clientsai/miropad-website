@@ -74,7 +74,7 @@ header {
 }
 
 .logo-lock {
-    color: #1D1D1F;
+    color: #111827;
 }
 
 /* Status indicator - subtle green dot */
@@ -89,7 +89,7 @@ header {
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #1D1D1F;
+    background: #111827;
     border-radius: 50%;
     box-shadow: 0 0 0 2px rgba(29, 29, 31, 0.15);
     animation: pulse 2s ease-in-out infinite;
@@ -151,7 +151,7 @@ main {
 }
 
 .security-badge svg {
-    color: #1D1D1F;
+    color: #111827;
     opacity: 0.9;
 }
 
@@ -456,7 +456,7 @@ footer {
     left: 0;
     right: 0;
     height: 2px;
-    background: #1D1D1F;
+    background: #111827;
 }
 
 /* Status page components */
@@ -534,7 +534,7 @@ footer {
 }
 
 .service-indicator.operational {
-    color: #1D1D1F;
+    color: #111827;
 }
 
 .service-indicator .status-dot {
@@ -589,7 +589,7 @@ footer {
 }
 
 .info-box svg {
-    color: #1D1D1F;
+    color: #111827;
 }
 
 .legal-page h1 {
@@ -932,7 +932,7 @@ footer {
 
 .feature-list li::before {
     content: "•";
-    color: #1D1D1F;
+    color: #111827;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -966,7 +966,7 @@ footer {
     display: inline-block;
     padding: 6px 16px;
     background: rgba(29, 29, 31, 0.1);
-    color: #1D1D1F;
+    color: #111827;
     border-radius: 4px;
     font-size: 11px;
     font-weight: 600;
@@ -1016,7 +1016,7 @@ footer {
     font-size: 13px;
     font-weight: 600;
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Courier New', monospace;
-    color: #1D1D1F;
+    color: #111827;
 }
 
 .timeline-content {
@@ -1220,7 +1220,7 @@ footer {
 
 .partner-list li::before {
     content: "→";
-    color: #1D1D1F;
+    color: #111827;
     position: absolute;
     left: 0;
     font-weight: 600;
@@ -1342,7 +1342,7 @@ footer {
     height: 36px;
     border-radius: 50%;
     background: rgba(29, 29, 31, 0.1);
-    color: #1D1D1F;
+    color: #111827;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1392,7 +1392,8 @@ footer {
 .cta-button {
     display: inline-block;
     padding: 16px 36px;
-    background: #1D1D1F;
+    background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);
+    box-shadow: 0 8px 22px -13px rgba(61, 32, 102, 0.72);
     color: white;
     text-decoration: none;
     border-radius: 10px;
@@ -1405,7 +1406,7 @@ footer {
 }
 
 .cta-button:hover {
-    background: #000000;
+    transform: translateY(-1px);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(29, 29, 31, 0.3);
 }
@@ -1572,7 +1573,7 @@ footer {
     justify-content: center;
     background: rgba(29, 29, 31, 0.08);
     border-radius: 10px;
-    color: #1D1D1F;
+    color: #111827;
 }
 
 .contact-info {
@@ -1778,7 +1779,7 @@ footer {
     left: 0;
     right: 0;
     height: 1px;
-    background: #1D1D1F;
+    background: #111827;
     transform: scaleX(0);
     transition: transform 0.2s ease;
 }
@@ -1966,7 +1967,8 @@ footer {
     display: inline-block;
     width: 100%;
     padding: 14px 24px;
-    background: #1D1D1F;
+    background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);
+    box-shadow: 0 8px 22px -13px rgba(61, 32, 102, 0.72);
     color: #ffffff;
     text-align: center;
     border-radius: 10px;
@@ -1978,7 +1980,7 @@ footer {
 }
 
 .modal-cta:hover {
-    background: #000000;
+    transform: translateY(-1px);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(29, 29, 31, 0.3);
 }
@@ -2033,7 +2035,7 @@ footer {
 }
 
 .service-notice a {
-    color: #1D1D1F;
+    color: #111827;
     text-decoration: none;
     font-weight: 500;
 }
@@ -2137,8 +2139,8 @@ footer {
     display: inline-block;
     animation: blink 1s step-end infinite;
     font-weight: 300;
-    color: #1D1D1F;
-    -webkit-text-fill-color: #1D1D1F;
+    color: #111827;
+    -webkit-text-fill-color: #111827;
     margin-left: 2px;
     background: none;
 }
@@ -2251,7 +2253,7 @@ footer {
     gap: 6px;
     font-size: 15px;
     font-weight: 500;
-    color: #1D1D1F;
+    color: #111827;
     text-decoration: none;
     transition: gap 0.2s ease;
 }
@@ -2340,14 +2342,14 @@ footer {
     margin-top: 24px;
     font-size: 15px;
     font-weight: 500;
-    color: #1D1D1F;
+    color: #111827;
     text-decoration: none;
     border-bottom: 1px solid rgba(29, 29, 31, 0.3);
     transition: border-color 0.2s ease;
 }
 
 .industry-modal-cta:hover {
-    border-color: #1D1D1F;
+    border-color: #111827;
 }
 
 @media (max-width: 768px) {
@@ -2469,4 +2471,70 @@ footer {
 
 @media (max-width: 640px) {
     .powered-chip { display: none; }
+}
+
+
+/* ── The family's primary action ──────────────────────────────────────────────
+   Every sibling site puts one purple gradient button in the header and repeats
+   it at the end of each page. Miropad had only bordered grey secondaries, which
+   is most of why it read as a different company. */
+
+.header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);
+    box-shadow: 0 8px 22px -13px rgba(61, 32, 102, 0.72);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.header-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px -13px rgba(61, 32, 102, 0.8);
+}
+
+.header-cta svg { flex-shrink: 0; }
+
+@media (max-width: 640px) {
+    .header-cta { padding: 9px 14px; font-size: 13px; }
+    .header-cta .cta-arrow { display: none; }
+}
+
+/* Section closer, repeated at the foot of interior pages like the siblings do. */
+.page-closer {
+    text-align: center;
+    padding: 72px 0 88px;
+    border-top: 1px solid #F3F4F6;
+    margin-top: 72px;
+}
+
+.page-closer h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.page-closer p {
+    font-size: 16px;
+    color: #6B7280;
+    margin: 0 auto 28px;
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+.page-closer .accent {
+    background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
