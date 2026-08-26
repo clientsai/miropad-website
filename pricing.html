@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing – Miropad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="miropad-icon.svg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/" class="logo-link">
+                        <img src="logo.svg" alt="Miropad" class="logo-image" width="120" height="40">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="https://app.clients.ai" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 14V4M10 4L6 8M10 4L14 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="/docs" class="header-action-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 17C4 13.5 6.5 11 10 11C13.5 11 16 13.5 16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- View Resource Modal -->
+        <div class="modal" id="uploadModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <h2 id="modalTitle">Powered by Clients.ai</h2>
+                <p class="modal-description">Miropad is the secure delivery layer for AI-generated content resources created by Clients.ai agents.</p>
+                <p class="modal-description">Our AI agents create personalized resources—reports, audits, guides, and strategic recommendations—and share them through verified links, driving meaningful engagement for your business.</p>
+                <a href="https://clients.ai" class="modal-cta">Start Free Trial at Clients.ai →</a>
+            </div>
+        </div>
+
+        <div class="page-hero">
+            <h1>Pricing</h1>
+            <p class="hero-subtitle">Miropad is included with every Clients.ai plan</p>
+        </div>
+
+        <div style="max-width: 1200px; margin: 56px auto 0; padding: 0 24px;">
+            <div style="text-align:center;margin-bottom:40px;">
+                <p style="font-size:13px;font-weight:600;color:#1D1D1F;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 16px;">Clients.ai Users Only</p>
+                <p style="font-size:18px;color:#4b5563;line-height:1.7;max-width:720px;margin:0 auto;">
+                    Miropad is not sold separately. It is the surface your Clients.ai agents publish to when
+                    they produce a report, an audit, or a set of recommendations for someone — so it comes
+                    with every plan, at no additional cost, for as many documents as they create.
+                </p>
+                <p style="font-size:16px;color:#999;line-height:1.7;max-width:720px;margin:16px auto 0;">
+                    Eighteen days free. Cancel with one click and you are never billed.
+                </p>
+            </div>
+
+            <div style="display:flex;justify-content:center;margin-bottom:40px;">
+                <div style="display:inline-flex;gap:4px;border:1px solid #E5E7EB;border-radius:999px;padding:4px;background:#ffffff;">
+                    <button type="button" id="billAnnual" style="border:0;cursor:pointer;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;background:#111827;color:#ffffff;">Annual &middot; save 17%</button>
+                    <button type="button" id="billMonthly" style="border:0;cursor:pointer;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;background:transparent;color:#6B7280;">Monthly</button>
+                </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+                <div class="pricing-card" data-monthly="349" data-annual="249" data-href-monthly="https://app.clients.ai/signup" data-href-annual="https://app.clients.ai/signup/base-annual" style="border:1px solid #111827;border-radius:12px;padding:40px;background:#ffffff;">
+                    <p style="font-size:12px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 8px;">WE'D START YOU HERE</p>
+                    <h2 style="font-size:20px;font-weight:600;color:#111827;margin:0 0 20px;">Marketing agents</h2>
+                    <div style="display:flex;align-items:baseline;gap:8px;">
+                        <span class="strike-price" style="font-size:18px;color:#9CA3AF;text-decoration:line-through;">$349</span>
+                        <span class="amount" style="font-size:44px;font-weight:600;color:#111827;letter-spacing:-1px;">$249</span>
+                        <span style="font-size:14px;color:#6B7280;">/mo</span>
+                    </div>
+                    <p class="billing-note" style="font-size:13px;color:#9CA3AF;margin:6px 0 0;">Billed annually ($2,999/yr)</p>
+                    <a class="plan-cta modal-cta" href="https://app.clients.ai/signup/base-annual" style="display:block;text-align:center;margin-top:24px;">Start 18-day free trial</a>
+                    <ul style="list-style:none;padding:0;margin:28px 0 0;">
+                        <li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Traffic agents</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Conversation agents</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Follow-up agents</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Miropad links for everything they produce</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Affiliate Launchpad</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Unlimited campaigns</span></li>
+                        <li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;">
+                            <span style="color:#111827;flex-shrink:0;">&#10003;</span><span>2,000 working hours per month <span style="color:#9CA3AF;">(~12¢ / hr)</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pricing-card" data-monthly="799" data-annual="416" data-href-monthly="https://app.clients.ai/signup/pro-monthly" data-href-annual="https://app.clients.ai/signup/pro-annual" style="border:1px solid #E5E7EB;border-radius:12px;padding:40px;background:#ffffff;">
+                    <p style="font-size:12px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 8px;">SCALE UP</p>
+                    <h2 style="font-size:20px;font-weight:600;color:#111827;margin:0 0 20px;">Pro plan</h2>
+                    <div style="display:flex;align-items:baseline;gap:8px;">
+                        <span class="strike-price" style="font-size:18px;color:#9CA3AF;text-decoration:line-through;">$799</span>
+                        <span class="amount" style="font-size:44px;font-weight:600;color:#111827;letter-spacing:-1px;">$416</span>
+                        <span style="font-size:14px;color:#6B7280;">/mo</span>
+                    </div>
+                    <p class="billing-note" style="font-size:13px;color:#9CA3AF;margin:6px 0 0;">Billed annually ($4,999/yr)</p>
+                    <a class="plan-cta modal-cta" href="https://app.clients.ai/signup/pro-annual" style="display:block;text-align:center;margin-top:24px;">Start 18-day free trial</a>
+                    <ul style="list-style:none;padding:0;margin:28px 0 0;">
+                        <li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Traffic agents</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Conversation agents</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Follow-up agents</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Miropad links for everything they produce</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Affiliate Launchpad</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Unlimited campaigns</span></li>
+                        <li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;">
+                            <span style="color:#111827;flex-shrink:0;">&#10003;</span><span>5,000 working hours per month <span style="color:#9CA3AF;">(~8¢ / hr)</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="border:1px solid #E5E7EB;border-radius:12px;padding:40px;background:#ffffff;">
+                    <p style="font-size:12px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 8px;">ENTERPRISE</p>
+                    <h2 style="font-size:20px;font-weight:600;color:#111827;margin:0 0 20px;">Enterprise suite</h2>
+                    <div style="display:flex;align-items:baseline;gap:8px;">
+                        <span style="font-size:44px;font-weight:600;color:#111827;letter-spacing:-1px;">$25,000</span>
+                        <span style="font-size:14px;color:#6B7280;">/yr</span>
+                    </div>
+                    <p style="font-size:13px;color:#9CA3AF;margin:6px 0 0;">Includes 10&times; Pro accounts</p>
+                    <div style="margin-top:24px;text-align:center;border:1px solid #E5E7EB;border-radius:8px;padding:14px;font-size:15px;color:#9CA3AF;">Full &middot; reopens Jan 1, 2027</div>
+                    <ul style="list-style:none;padding:0;margin:28px 0 0;"><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Everything in Pro, across ten teams</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Miropad links for everything they produce</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>25,000 working hours per month (~8¢ / hr)</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Affiliate Launchpad</span></li><li style="display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#374151;line-height:1.6;margin-bottom:10px;"><span style="color:#111827;flex-shrink:0;">&#10003;</span><span>Priority support</span></li></ul>
+                </div>
+            </div>
+
+            <p style="text-align:center;font-size:14px;color:#6B7280;margin:40px 0 64px;">Free 18-day trial &middot; Cancel anytime</p>
+        </div>
+
+        <footer class="ive-footer">
+            <div class="footer-wrapper">
+                <nav class="footer-main-nav">
+                    <a href="/about" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 10V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="10" cy="7" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                    <a href="/security" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2L4 4V9C4 13 6.5 16.5 10 18.5C13.5 16.5 16 13 16 9V4L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M7.5 10L9 11.5L12.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Security</span>
+                    </a>
+                    <a href="/docs" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="3" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 7H13M7 10H13M7 13H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Docs</span>
+                    </a>
+                    <a href="/support" class="footer-nav-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 13C7 13 8.5 15 10 15C11.5 15 13 13 13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7.5" cy="8.5" r="0.5" fill="currentColor"/>
+                            <circle cx="12.5" cy="8.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        <span>Support</span>
+                    </a>
+                </nav>
+                <div class="footer-meta">
+                    <p class="footer-copyright">© <span id="current-year">2025</span> your AI platform</p>
+                    <p class="footer-tagline">A Miropad System</p>
+                    <nav class="footer-legal-nav">
+                        <a href="/pricing">Pricing</a>
+                        <a href="/status">Status</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+    // Upload Modal
+    (function() {
+        const modal = document.getElementById('uploadModal');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        uploadBtn.addEventListener('click', openModal);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    })();
+    </script>
+
+    <script>
+        (function () {
+            var annualBtn = document.getElementById('billAnnual');
+            var monthlyBtn = document.getElementById('billMonthly');
+            var cards = document.querySelectorAll('.pricing-card');
+            function render(annual) {
+                annualBtn.style.background = annual ? '#111827' : 'transparent';
+                annualBtn.style.color = annual ? '#ffffff' : '#6B7280';
+                monthlyBtn.style.background = annual ? 'transparent' : '#111827';
+                monthlyBtn.style.color = annual ? '#6B7280' : '#ffffff';
+                cards.forEach(function (card) {
+                    var strike = card.querySelector('.strike-price');
+                    var amount = card.querySelector('.amount');
+                    var note = card.querySelector('.billing-note');
+                    var cta = card.querySelector('.plan-cta');
+                    var monthly = card.getAttribute('data-monthly');
+                    var annualPrice = card.getAttribute('data-annual');
+                    strike.style.display = annual ? 'inline' : 'none';
+                    amount.textContent = '$' + (annual ? annualPrice : monthly);
+                    note.textContent = annual ? note.getAttribute('data-annual-note') : 'Billed monthly';
+                    cta.setAttribute('href', annual ? card.getAttribute('data-href-annual') : card.getAttribute('data-href-monthly'));
+                });
+            }
+            document.querySelectorAll('.billing-note').forEach(function (n) {
+                n.setAttribute('data-annual-note', n.textContent);
+            });
+            annualBtn.addEventListener('click', function () { render(true); });
+            monthlyBtn.addEventListener('click', function () { render(false); });
+        })();
+    </script>
+</body>
+</html>
