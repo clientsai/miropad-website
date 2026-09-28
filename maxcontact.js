@@ -48,7 +48,7 @@
           return fetch(API + "/api/public-chat/contact", { method: "POST", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ turnstile: t, name: name, email: email, message: message, page: location.pathname }) });
         }).then(function (r) {
-          if (r.status === 429) { btn.disabled = false; btn.textContent = "Send message"; return say("That's a lot of messages at once — try again in a little while.", false); }
+          if (r.status === 429) { btn.disabled = false; btn.textContent = "Send message"; return say("You've already sent us a message today — we'll reply by email soon.", false); }
           return r.json().then(function (d) {
             if (!r.ok || d.code !== "sent") return fail();
             form.hidden = true; form.style.display = "none";
