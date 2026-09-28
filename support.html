@@ -106,6 +106,28 @@
             </svg>
         </div>
 
+        <!-- Contact form: answered by Max at Clients.ai, by email -->
+        <div id="contact" data-max-contact style="max-width: 640px; margin: 64px auto 0; padding: 0 24px;">
+            <div style="padding: 40px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                <h2 style="font-family: -apple-system, sans-serif; font-size: 28px; font-weight: 700; color: #111827; margin: 0 0 8px;">Send us a message</h2>
+                <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #6B7280; line-height: 1.7; margin: 0 0 24px;">Have a question or want to learn more? We'd love to hear from you.</p>
+                <form novalidate style="display: grid; gap: 16px; font-family: -apple-system, sans-serif;">
+                    <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #111827;">Name
+                        <input name="name" type="text" autocomplete="name" placeholder="Your name" required style="font: inherit; font-weight: 400; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 10px; background: #F9FAFB; color: #111827;">
+                    </label>
+                    <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #111827;">Email
+                        <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required style="font: inherit; font-weight: 400; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 10px; background: #F9FAFB; color: #111827;">
+                    </label>
+                    <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #111827;">Message
+                        <textarea name="message" rows="5" placeholder="How can we help you?" required style="font: inherit; font-weight: 400; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 10px; background: #F9FAFB; color: #111827; resize: vertical;"></textarea>
+                    </label>
+                    <div data-check style="display: flex; justify-content: center;"></div>
+                    <button type="submit" style="font: inherit; font-size: 15px; font-weight: 600; color: white; border: 0; border-radius: 10px; padding: 14px 20px; min-height: 48px; cursor: pointer; background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);">Send message</button>
+                </form>
+                <p data-msg role="status" aria-live="polite" hidden style="font-family: -apple-system, sans-serif; font-size: 15px; line-height: 1.6; margin: 16px 0 0;"></p>
+            </div>
+        </div>
+
         <!-- Contact Methods -->
         <div style="max-width: 1200px; margin: 64px auto; padding: 0 24px;">
             <div style="text-align: center; margin-bottom: 48px;">
@@ -312,6 +334,7 @@
                             <li><a href="https://app.clients.ai/signup">Free 18-Day Trial</a></li>
                             <li><a href="https://app.clients.ai">Sign In</a></li>
                             <li><a href="/support">Support</a></li>
+                            <li><a href="/contact">Contact</a></li>
                             <li><a href="/status">Status</a></li>
                         </ul>
                     </div>
@@ -348,5 +371,6 @@
             window.addEventListener('scroll', onScroll, { passive: true });
         })();
     </script>
+    <script src="/maxcontact.js" defer></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms – Miropad</title>
+    <title>Contact – Miropad</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="miropad-icon.svg">
@@ -44,103 +44,34 @@
             </div>
         </header>
 
-        <!-- Acceptable Use Section -->
-        <div class="content-section">
-            <div class="section-header">
-                <h2>Acceptable Use</h2>
-            </div>
-            <div class="section-body">
-                <p>You agree to use Miropad only for lawful purposes. You may not:</p>
-                <ul class="feature-list">
-                    <li>Attempt to circumvent, disable, or interfere with Miropad infrastructure</li>
-                    <li>Use automated systems to access Miropad links at scale without authorization</li>
-                    <li>Reverse engineer or attempt to extract source code from Miropad services</li>
-                    <li>Violate any applicable laws or regulations in connection with your use of Miropad</li>
-                </ul>
+
+        <div class="page-hero">
+            <h1>Contact us</h1>
+            <p class="hero-subtitle">We usually reply by email within a few hours</p>
+        </div>
+
+        <!-- Contact form: answered by Max at Clients.ai, by email -->
+        <div id="contact" data-max-contact style="max-width: 640px; margin: 64px auto 0; padding: 0 24px;">
+            <div style="padding: 40px; background: white; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                <h2 style="font-family: -apple-system, sans-serif; font-size: 28px; font-weight: 700; color: #111827; margin: 0 0 8px;">Send us a message</h2>
+                <p style="font-family: -apple-system, sans-serif; font-size: 15px; color: #6B7280; line-height: 1.7; margin: 0 0 24px;">Have a question or want to learn more? We'd love to hear from you.</p>
+                <form novalidate style="display: grid; gap: 16px; font-family: -apple-system, sans-serif;">
+                    <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #111827;">Name
+                        <input name="name" type="text" autocomplete="name" placeholder="Your name" required style="font: inherit; font-weight: 400; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 10px; background: #F9FAFB; color: #111827;">
+                    </label>
+                    <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #111827;">Email
+                        <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required style="font: inherit; font-weight: 400; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 10px; background: #F9FAFB; color: #111827;">
+                    </label>
+                    <label style="display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: #111827;">Message
+                        <textarea name="message" rows="5" placeholder="How can we help you?" required style="font: inherit; font-weight: 400; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 10px; background: #F9FAFB; color: #111827; resize: vertical;"></textarea>
+                    </label>
+                    <div data-check style="display: flex; justify-content: center;"></div>
+                    <button type="submit" style="font: inherit; font-size: 15px; font-weight: 600; color: white; border: 0; border-radius: 10px; padding: 14px 20px; min-height: 48px; cursor: pointer; background: linear-gradient(135deg, #3D2066 0%, #7B5BA6 100%);">Send message</button>
+                </form>
+                <p data-msg role="status" aria-live="polite" hidden style="font-family: -apple-system, sans-serif; font-size: 15px; line-height: 1.6; margin: 16px 0 0;"></p>
             </div>
         </div>
 
-        <!-- Warranties and Liability Section -->
-        <div class="content-section">
-            <div class="section-header">
-                <h2>Disclaimer of Warranties</h2>
-            </div>
-            <div class="section-body">
-                <p>
-                    Miropad is provided "as is" and "as available" without warranties of any kind, either express or implied.
-                    We do not guarantee uninterrupted access, error-free operation, or that Miropad will meet your specific requirements.
-                </p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2>Limitation of Liability</h2>
-            </div>
-            <div class="section-body">
-                <p>
-                    To the maximum extent permitted by law, Miropad, your AI platform, and our partner companies shall not be liable
-                    for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability
-                    to use Miropad services.
-                </p>
-            </div>
-        </div>
-
-        <!-- Third-Party Content Section -->
-        <div class="content-section">
-            <div class="section-header">
-                <h2>Third-Party Content</h2>
-            </div>
-            <div class="section-body">
-                <p>
-                    Miropad links redirect to third-party content. We are not responsible for the accuracy, legality, or
-                    appropriateness of content you access through Miropad redirects. Your use of destination content is subject
-                    to the terms and policies of those destinations.
-                </p>
-            </div>
-        </div>
-
-        <!-- Modifications Section -->
-        <div class="content-section">
-            <div class="section-header">
-                <h2>Modifications to Terms</h2>
-            </div>
-            <div class="section-body">
-                <p>
-                    We reserve the right to modify these Terms of Service at any time. Changes will be posted on this page
-                    with an updated "Last updated" date. Continued use of Miropad after changes constitutes acceptance of the
-                    updated terms.
-                </p>
-            </div>
-        </div>
-
-        <!-- Governing Law Section -->
-        <div class="content-section">
-            <div class="section-header">
-                <h2>Governing Law</h2>
-            </div>
-            <div class="section-body">
-                <p>
-                    These Terms of Service are governed by and construed in accordance with applicable laws, without regard to
-                    conflict of law principles. Any disputes shall be resolved in accordance with the dispute resolution procedures
-                    of your AI platform.
-                </p>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="content-section" style="border-bottom: none;">
-            <div class="section-header">
-                <h2>Contact</h2>
-            </div>
-            <div class="section-body">
-                <p>
-                    Questions about these Terms of Service should be directed to <a href="mailto:legal@clients.ai">legal@clients.ai</a>.
-                </p>
-            </div>
-        </div>
-
-        
         <div class="page-closer">
             <h2>Everything your agents make, <span class="accent">shareable.</span></h2>
             <p>Miropad comes with Clients.ai. Eighteen days free, cancel in one click, never billed.</p>
@@ -205,5 +136,6 @@
             window.addEventListener('scroll', onScroll, { passive: true });
         })();
     </script>
+    <script src="/maxcontact.js" defer></script>
 </body>
 </html>
