@@ -52,7 +52,7 @@
           return r.json().then(function (d) {
             if (!r.ok || d.code !== "sent") return fail();
             form.hidden = true; form.style.display = "none";
-            say(d.to === "max" ? "Thanks — Max will reply by email shortly." : "Thanks — we'll get back to you by email shortly.", true);
+            say(d.to === "max" ? "Thanks — you’ll get a reply by email shortly." : "Thanks — we'll get back to you by email shortly.", true);
           });
         });
       }).catch(fail);
