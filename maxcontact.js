@@ -51,7 +51,7 @@
           if (r.status === 429) { btn.disabled = false; btn.textContent = "Send message"; return say("That's a lot of messages at once — try again in a little while.", false); }
           return r.json().then(function (d) {
             if (!r.ok || d.code !== "sent") return fail();
-            form.hidden = true;
+            form.hidden = true; form.style.display = "none";
             say(d.to === "max" ? "Thanks — Max will reply by email shortly." : "Thanks — we'll get back to you by email shortly.", true);
           });
         });
