@@ -595,7 +595,7 @@ footer {
     color: #111827;
 }
 
-h1 {
+.legal-page h1 {
     font-size: 36px;
     font-weight: 300;
     letter-spacing: -0.03em;
@@ -758,7 +758,7 @@ h2 {
         padding: 32px 0;
     }
 
-    h1 {
+    .legal-page h1 {
         font-size: 28px;
     }
 
@@ -2468,6 +2468,7 @@ h2 {
     font-weight: 500;
     letter-spacing: 0.01em;
     color: #6B7280;
+    text-decoration: none;
     background: rgba(249, 250, 251, 0.8);
     border: 1px solid #E5E7EB;
     border-radius: 999px;
@@ -2811,4 +2812,17 @@ body.scrolled header { border-bottom-color: rgba(0, 0, 0, 0.06); }
     [style*="max-width: 1000px"] { max-width: 100% !important; padding-left: 16px !important; padding-right: 16px !important; }
     [style*="padding: 64px"] { padding: 32px 16px !important; }
     [style*="gap: 80px"] { gap: 24px !important; }
+}
+
+/* Docs tables scroll inside their own box on a phone instead of widening the page (2026-11-13) */
+@media (max-width: 768px) {
+    .param-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* Headlines wrap in balanced lines, never one stranded word (2026-11-13) */
+h1, h2 { text-wrap: balance; }
+
+/* Three-word headings that two lines would strand a word in: one line on a small phone */
+@media (max-width: 480px) {
+    h2.fit-phone { font-size: 19px !important; }
 }
